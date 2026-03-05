@@ -1,0 +1,32 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="debugGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Magnifying glass circle -->
+  <circle cx="85" cy="85" r="40" fill="white" stroke="url(#debugGrad)" stroke-width="6"/>
+
+  <!-- Handle -->
+  <line x1="115" y1="115" x2="145" y2="145" stroke="url(#debugGrad)" stroke-width="8" stroke-linecap="round"/>
+
+  <!-- Bug inside magnifying glass -->
+  <!-- Bug body -->
+  <ellipse cx="85" cy="80" rx="15" ry="20" fill="#667eea" opacity="0.8"/>
+  <circle cx="85" cy="65" r="10" fill="#667eea" opacity="0.8"/>
+
+  <!-- Bug eyes -->
+  <circle cx="80" cy="63" r="3" fill="white"/>
+  <circle cx="90" cy="63" r="3" fill="white"/>
+
+  <!-- Bug legs -->
+  <line x1="70" y1="75" x2="60" y2="70" stroke="#667eea" stroke-width="2"/>
+  <line x1="70" y1="85" x2="60" y2="90" stroke="#667eea" stroke-width="2"/>
+  <line x1="100" y1="75" x2="110" y2="70" stroke="#667eea" stroke-width="2"/>
+  <line x1="100" y1="85" x2="110" y2="90" stroke="#667eea" stroke-width="2"/>
+
+  <!-- Sparkle effect -->
+  <path d="M 155 50 L 157 54 L 161 56 L 157 58 L 155 62 L 153 58 L 149 56 L 153 54 Z" fill="#f093fb" opacity="0.8"/>
+</svg>

@@ -1,0 +1,21 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="verifyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Shield shape -->
+  <path d="M 100 30 L 150 50 L 150 100 Q 150 150 100 170 Q 50 150 50 100 L 50 50 Z"
+        fill="url(#verifyGrad)" opacity="0.2" stroke="url(#verifyGrad)" stroke-width="4"/>
+
+  <!-- Large checkmark -->
+  <path d="M 75 100 L 90 120 L 130 70"
+        stroke="url(#verifyGrad)" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Small decorative circles -->
+  <circle cx="60" cy="60" r="4" fill="#667eea" opacity="0.6"/>
+  <circle cx="140" cy="60" r="4" fill="#764ba2" opacity="0.6"/>
+  <circle cx="100" cy="150" r="4" fill="#f093fb" opacity="0.6"/>
+</svg>

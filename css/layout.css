@@ -1,0 +1,222 @@
+/**
+ * Layout Styles - 版面配置
+ *
+ * 包含導覽列、Hero、Section、Footer 的版面結構
+ */
+
+/* ========================================
+   Navigation - 導覽列
+   ======================================== */
+nav {
+  position: sticky;
+  top: 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--color-border);
+  z-index: var(--z-sticky);
+  padding: var(--space-sm) 0;
+  transition: all var(--transition-base);
+}
+
+nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .logo {
+  font-weight: var(--font-weight-bold);
+  font-size: 1.25rem;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.02em;
+}
+
+nav ul {
+  display: flex;
+  gap: var(--space-md);
+  list-style: none;
+  margin: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: var(--font-weight-medium);
+  transition: color var(--transition-base);
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius-sm);
+}
+
+nav a:hover {
+  color: var(--color-primary);
+  background: var(--color-bg-light);
+}
+
+/* Hamburger Menu (mobile) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.hamburger span {
+  width: 24px;
+  height: 3px;
+  background: var(--color-text);
+  border-radius: 2px;
+  transition: all var(--transition-base);
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ========================================
+   Hero Section - 首頁主視覺
+   ======================================== */
+#hero {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: var(--space-xl) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+#hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="%23667eea" opacity="0.1"/></svg>');
+  opacity: 0.4;
+}
+
+#hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+#hero h1 {
+  font-size: 3rem;
+  margin-bottom: var(--space-md);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#hero .subtitle {
+  font-size: 1.25rem;
+  color: var(--color-text-light);
+  margin-bottom: var(--space-lg);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: var(--line-height-relaxed);
+}
+
+/* ========================================
+   Sections - 內容區塊
+   ======================================== */
+section {
+  padding: var(--space-xl) 0;
+  position: relative;
+}
+
+section:nth-child(even) {
+  background: var(--color-bg-light);
+}
+
+section h2 {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+  font-size: 2.5rem;
+  position: relative;
+  padding-bottom: var(--space-sm);
+}
+
+section h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  border-radius: var(--radius-full);
+}
+
+section h3 {
+  margin-bottom: var(--space-sm);
+  color: var(--color-text);
+}
+
+section p {
+  color: var(--color-text-light);
+  line-height: var(--line-height-relaxed);
+}
+
+/* Grid Layouts */
+.grid {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* ========================================
+   Footer - 頁尾
+   ======================================== */
+footer {
+  background: var(--color-text);
+  color: white;
+  text-align: center;
+  padding: var(--space-lg) 0;
+  margin-top: var(--space-xl);
+}
+
+footer p {
+  margin: 0;
+  max-width: none;
+  opacity: 0.8;
+}
+
+footer a {
+  color: var(--color-accent);
+  font-weight: var(--font-weight-medium);
+}
+
+footer a:hover {
+  color: white;
+}

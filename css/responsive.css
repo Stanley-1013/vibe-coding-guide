@@ -1,0 +1,302 @@
+/**
+ * Responsive Styles - 響應式設計
+ *
+ * 針對不同螢幕尺寸的樣式調整
+ * Breakpoints: 768px (tablet), 480px (mobile)
+ */
+
+/* ========================================
+   Tablet (768px and below)
+   ======================================== */
+@media (max-width: 768px) {
+  /* Navigation */
+  nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: var(--space-md);
+    box-shadow: var(--shadow-md);
+    border-top: 1px solid var(--color-border);
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  nav li {
+    margin: 0;
+  }
+
+  nav a {
+    display: block;
+    padding: var(--space-sm);
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  /* Hero */
+  #hero {
+    min-height: 60vh;
+    padding: var(--space-lg) 0;
+  }
+
+  #hero h1 {
+    font-size: 2rem;
+  }
+
+  #hero .subtitle {
+    font-size: 1rem;
+  }
+
+  #hero img {
+    max-width: 300px !important;
+  }
+
+  /* Typography */
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  section h2 {
+    font-size: 1.75rem;
+  }
+
+  /* Sections */
+  section {
+    padding: var(--space-lg) 0;
+  }
+
+  /* Container */
+  .container,
+  .container-narrow {
+    padding: 0 var(--space-sm);
+  }
+
+  /* Grid */
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  /* Cards */
+  .card {
+    padding: var(--space-sm);
+  }
+
+  /* Prompt Card */
+  .prompt-card {
+    font-size: 0.85rem;
+    padding: var(--space-sm);
+  }
+
+  /* Accordion */
+  .accordion-header {
+    padding: var(--space-sm);
+    font-size: 0.95rem;
+  }
+
+  .accordion-content.active {
+    padding: var(--space-sm);
+  }
+}
+
+/* ========================================
+   Mobile (480px and below)
+   ======================================== */
+@media (max-width: 480px) {
+  /* Base */
+  body {
+    font-size: 14px;
+  }
+
+  /* Hero */
+  #hero {
+    min-height: 50vh;
+  }
+
+  #hero h1 {
+    font-size: 1.5rem;
+  }
+
+  #hero .subtitle {
+    font-size: 0.9rem;
+  }
+
+  #hero img {
+    max-width: 250px !important;
+    margin-bottom: 1rem !important;
+  }
+
+  /* Typography */
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.125rem;
+  }
+
+  section h2 {
+    font-size: 1.5rem;
+  }
+
+  /* Sections */
+  section {
+    padding: var(--space-md) 0;
+  }
+
+  /* Spacing */
+  :root {
+    --space-md: 1.5rem;
+    --space-lg: 3rem;
+    --space-xl: 4rem;
+  }
+
+  /* Buttons */
+  .btn {
+    width: 100%;
+    text-align: center;
+    padding: var(--space-sm);
+  }
+
+  .btn-small {
+    width: auto;
+  }
+
+  /* Cards */
+  .card {
+    padding: var(--space-sm);
+  }
+
+  .card h3 {
+    font-size: 1.125rem;
+  }
+
+  /* Prompt Card */
+  .prompt-card {
+    font-size: 0.8rem;
+    padding: var(--space-sm);
+  }
+
+  .prompt-card .actions {
+    flex-direction: column;
+  }
+
+  .prompt-card .copy-btn {
+    width: 100%;
+  }
+
+  /* Accordion */
+  .accordion-header {
+    padding: var(--space-sm);
+    font-size: 0.9rem;
+  }
+
+  .accordion-content.active {
+    padding: var(--space-sm);
+  }
+
+  /* Toast */
+  .toast {
+    left: var(--space-sm);
+    right: var(--space-sm);
+    max-width: none;
+  }
+
+  /* Touch-friendly buttons */
+  .btn,
+  .accordion-header,
+  summary,
+  nav a {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Details element */
+  details {
+    padding: var(--space-sm);
+  }
+
+  summary {
+    font-size: 0.9rem;
+  }
+
+  /* Footer */
+  footer {
+    padding: var(--space-md) 0;
+    font-size: 0.875rem;
+  }
+}
+
+/* ========================================
+   Desktop Large (1200px and above)
+   ======================================== */
+@media (min-width: 1200px) {
+  #hero h1 {
+    font-size: 3.5rem;
+  }
+
+  #hero .subtitle {
+    font-size: 1.5rem;
+  }
+
+  section h2 {
+    font-size: 3rem;
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ========================================
+   Print Styles - 列印樣式
+   ======================================== */
+@media print {
+  nav,
+  footer,
+  .hamburger,
+  .toast,
+  .btn {
+    display: none;
+  }
+
+  body {
+    font-size: 12pt;
+    color: black;
+    background: white;
+  }
+
+  section {
+    page-break-inside: avoid;
+  }
+
+  h1, h2, h3 {
+    page-break-after: avoid;
+  }
+}

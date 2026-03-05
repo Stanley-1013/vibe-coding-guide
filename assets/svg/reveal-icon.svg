@@ -1,0 +1,29 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="magicGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Magic wand stick -->
+  <rect x="85" y="100" width="80" height="10" rx="5"
+        fill="url(#magicGrad)" transform="rotate(-45 125 105)"/>
+
+  <!-- Star tip -->
+  <path d="M 60 60 L 70 70 L 60 80 L 50 70 Z" fill="url(#magicGrad)"/>
+  <path d="M 55 65 L 65 65 L 60 55 Z" fill="#f093fb"/>
+  <path d="M 55 75 L 65 75 L 60 85 Z" fill="#f093fb"/>
+  <path d="M 45 70 L 55 70 L 50 60 Z" fill="#f093fb"/>
+  <path d="M 65 70 L 75 70 L 70 60 Z" fill="#f093fb"/>
+
+  <!-- Sparkles -->
+  <path d="M 130 50 L 132 54 L 136 56 L 132 58 L 130 62 L 128 58 L 124 56 L 128 54 Z" fill="#f093fb" opacity="0.8"/>
+  <path d="M 150 80 L 152 84 L 156 86 L 152 88 L 150 92 L 148 88 L 144 86 L 148 84 Z" fill="#667eea" opacity="0.8"/>
+  <path d="M 110 30 L 112 34 L 116 36 L 112 38 L 110 42 L 108 38 L 104 36 L 108 34 Z" fill="#764ba2" opacity="0.8"/>
+
+  <!-- Small dots -->
+  <circle cx="140" cy="100" r="3" fill="#f093fb" opacity="0.6"/>
+  <circle cx="160" cy="120" r="2" fill="#667eea" opacity="0.6"/>
+  <circle cx="120" cy="70" r="2" fill="#764ba2" opacity="0.6"/>
+</svg>

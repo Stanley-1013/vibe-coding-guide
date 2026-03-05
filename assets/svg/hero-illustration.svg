@@ -1,0 +1,42 @@
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f093fb;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#667eea;stop-opacity:0.8" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background circles -->
+  <circle cx="200" cy="200" r="180" fill="url(#grad1)" opacity="0.1"/>
+  <circle cx="200" cy="200" r="140" fill="url(#grad2)" opacity="0.1"/>
+
+  <!-- Robot/AI head (abstract) -->
+  <rect x="120" y="140" width="160" height="140" rx="20" fill="url(#grad1)"/>
+
+  <!-- Eyes -->
+  <circle cx="160" cy="190" r="15" fill="white" opacity="0.9"/>
+  <circle cx="240" cy="190" r="15" fill="white" opacity="0.9"/>
+  <circle cx="165" cy="195" r="8" fill="#667eea"/>
+  <circle cx="245" cy="195" r="8" fill="#667eea"/>
+
+  <!-- Smile/Interface line -->
+  <path d="M 150 240 Q 200 260 250 240" stroke="white" stroke-width="6" fill="none" stroke-linecap="round" opacity="0.9"/>
+
+  <!-- Code brackets around -->
+  <text x="70" y="230" font-size="80" fill="url(#grad2)" opacity="0.6" font-family="monospace">{</text>
+  <text x="310" y="230" font-size="80" fill="url(#grad2)" opacity="0.6" font-family="monospace">}</text>
+
+  <!-- Floating code symbols -->
+  <circle cx="80" cy="120" r="8" fill="#667eea" opacity="0.6"/>
+  <circle cx="320" cy="120" r="8" fill="#764ba2" opacity="0.6"/>
+  <circle cx="90" cy="300" r="6" fill="#f093fb" opacity="0.6"/>
+  <circle cx="310" cy="300" r="6" fill="#667eea" opacity="0.6"/>
+
+  <!-- Lines connecting (network effect) -->
+  <line x1="80" y1="120" x2="120" y2="160" stroke="#667eea" stroke-width="2" opacity="0.3"/>
+  <line x1="320" y1="120" x2="280" y2="160" stroke="#764ba2" stroke-width="2" opacity="0.3"/>
+</svg>
