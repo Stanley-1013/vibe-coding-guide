@@ -50,22 +50,68 @@
       <h2>工具入口</h2>
       <p style="text-align: center; color: var(--color-text-light); margin-bottom: 3rem;">先體驗「AI 帶你拆步驟＋一起做」的感覺</p>
 
-      <!-- Placeholder for Wave 3 content -->
       <div class="card animate-on-scroll" style="margin-bottom: var(--space-md);">
         <img src="./assets/svg/tool-antigravity.svg" alt="Antigravity" class="card-icon">
         <h3>💡 Antigravity（入門體驗）</h3>
-        <p>內容將在 Wave 3 填充...</p>
+        <p>我會先推薦 Antigravity，原因很簡單：它比較像有人幫你「拆步驟＋帶你做」，而不是只丟一段答案。</p>
+
+        <details style="margin-top: var(--space-sm);">
+          <summary>展開了解更多</summary>
+          <p style="margin-top: var(--space-sm);">我最常用它做三件事：</p>
+          <ul>
+            <li>把一個想法拆成可執行的小步驟</li>
+            <li>讓 AI 先把「我接下來要做什麼」講清楚</li>
+            <li>讓 AI 幫我把需求變成清楚的文件草稿</li>
+          </ul>
+
+          <div class="prompt-card">
+            <div>我想做一個小功能/小作品：&lt;一句話描述&gt;</div>
+            <div>我是新手/我想降低風險。請先給我 5–10 個小步驟，每步只做一件事。</div>
+            <div>請只帶我做第 1 步，並告訴我完成後應該看到什麼結果。</div>
+            <div class="actions">
+              <button class="btn btn-secondary copy-btn" data-copy="我想做一個小功能/小作品：<一句話描述>&#10;我是新手/我想降低風險。請先給我 5–10 個小步驟，每步只做一件事。&#10;請只帶我做第 1 步，並告訴我完成後應該看到什麼結果。">📋 複製 Prompt</button>
+            </div>
+          </div>
+        </details>
       </div>
 
       <div class="card animate-on-scroll" style="margin-bottom: var(--space-md);">
         <img src="./assets/svg/tool-claude.svg" alt="Claude Code" class="card-icon">
         <h3>🚀 Claude Code（日常主力）</h3>
-        <p>內容將在 Wave 3 填充...</p>
+        <p>我最常用 Claude Code（整合在 VS Code），因為它更像「在專案裡幫你一起改」：能沿著 repo 結構走，比較適合做重構、補測試、修 bug、補文件。</p>
+
+        <details style="margin-top: var(--space-sm);">
+          <summary>展開了解更多</summary>
+          <p style="margin-top: var(--space-sm);"><strong>我最常的搭配方式：</strong></p>
+          <ul>
+            <li>ChatGPT or Antigravity：先把任務拆小、把文件寫清楚</li>
+            <li>Claude Code：在 IDE 裡一步步把 code 實作到可跑可驗證</li>
+          </ul>
+
+          <div class="prompt-card">
+            <div>先不要一次改很多。請先列出你的修改計畫（要改哪些檔案、每步做什麼）。</div>
+            <div>我確認後你再從第 1 步開始，且每一步都要能跑得起來。</div>
+            <div>如果出錯，我會貼錯誤訊息給你，你再針對錯誤修。</div>
+            <div class="actions">
+              <button class="btn btn-secondary copy-btn" data-copy="先不要一次改很多。請先列出你的修改計畫（要改哪些檔案、每步做什麼）。&#10;我確認後你再從第 1 步開始，且每一步都要能跑得起來。&#10;如果出錯，我會貼錯誤訊息給你，你再針對錯誤修。">📋 複製 Prompt</button>
+            </div>
+          </div>
+        </details>
       </div>
 
       <div class="card animate-on-scroll">
         <h3>🔧 其他工具（特定場景）</h3>
-        <p>內容將在 Wave 3 填充...</p>
+        <p>我會把其他工具當成特定場景補位，而不是每個都硬學。</p>
+
+        <details style="margin-top: var(--space-sm);">
+          <summary>展開了解更多</summary>
+          <ul style="margin-top: var(--space-sm);">
+            <li><strong>Codex</strong>：偏「指令化、可重複流程」的任務</li>
+            <li><strong>Gemini</strong>：快速查資料、快速比較方案</li>
+            <li><strong>Cursor / Kiro</strong>：比較不同 IDE/流程思路</li>
+          </ul>
+          <p style="margin-top: var(--space-sm); font-style: italic;">我的原則：工具會換，懂原理最重要。</p>
+        </details>
       </div>
     </div>
   </section>
@@ -76,23 +122,73 @@
       <h2>核心技巧</h2>
       <p style="text-align: center; color: var(--color-text-light); margin-bottom: 3rem;">三個立刻有效的技巧</p>
 
-      <!-- Placeholder for Wave 3 content -->
       <div class="card animate-on-scroll stagger-item" style="margin-bottom: var(--space-md);">
         <img src="./assets/svg/tip-checklist.svg" alt="Checklist" class="card-icon">
-        <h3>技巧 1: 先要步驟清單再動手</h3>
-        <p>內容將在 Wave 3 填充...</p>
+        <h3>📋 技巧 1: 先要步驟清單再動手</h3>
+        <p>我用 AI 最大的心得是：<strong>先把需求寫成一頁文件，AI 產出會穩非常多。</strong></p>
+
+        <div class="prompt-card" style="margin-top: var(--space-sm);">
+          <div>我想做：&lt;一句話&gt;</div>
+          <div>請幫我寫一頁「最小需求文件」，包含 Goal / User flow / Scope（含不做清單）/ Acceptance（可驗收條件）。</div>
+          <div>請用白話，避免術語。</div>
+          <div class="actions">
+            <button class="btn btn-secondary copy-btn" data-copy="我想做：<一句話>&#10;請幫我寫一頁「最小需求文件」，包含 Goal / User flow / Scope（含不做清單）/ Acceptance（可驗收條件）。&#10;請用白話，避免術語。">📋 複製 Prompt</button>
+            <button class="btn btn-secondary stuck-btn" data-target="faq">❓ 卡住了</button>
+          </div>
+        </div>
+
+        <details style="margin-top: var(--space-sm);">
+          <summary>為什麼這樣做？</summary>
+          <p style="margin-top: var(--space-sm);">因為 AI 最容易翻車的情況是：需求在腦袋、聊天、零碎訊息裡。它只能猜，然後就會「看起來合理但其實不對」。</p>
+          <p><strong>最小需求文件通常只要包含：</strong></p>
+          <ul>
+            <li><strong>Goal</strong>：我要做什麼（1 句話）</li>
+            <li><strong>User flow</strong>：使用者怎麼操作（3–5 行）</li>
+            <li><strong>Scope</strong>：這次做哪些、不做哪些</li>
+            <li><strong>Acceptance</strong>：怎樣算完成（可驗收條件）</li>
+          </ul>
+        </details>
       </div>
 
       <div class="card animate-on-scroll stagger-item" style="margin-bottom: var(--space-md);">
         <img src="./assets/svg/tip-verify.svg" alt="Verify" class="card-icon">
-        <h3>技巧 2: 每做一小段就驗證</h3>
-        <p>內容將在 Wave 3 填充...</p>
+        <h3>✅ 技巧 2: 每做一小段就驗證</h3>
+        <p>不要一次改很多。先要計畫，再要最小修改，立刻跑起來驗證。</p>
+
+        <div class="prompt-card" style="margin-top: var(--space-sm);">
+          <div>請先給計畫（3–6 步），再給第 1 步的最小 patch。</div>
+          <div>我會跑起來驗證並回報結果，你再給下一步。</div>
+          <div class="actions">
+            <button class="btn btn-secondary copy-btn" data-copy="請先給計畫（3–6 步），再給第 1 步的最小 patch。&#10;我會跑起來驗證並回報結果，你再給下一步。">📋 複製 Prompt</button>
+            <button class="btn btn-secondary stuck-btn" data-target="faq">❓ 卡住了</button>
+          </div>
+        </div>
+
+        <details style="margin-top: var(--space-sm);">
+          <summary>完整流程：Plan → Patch → Run</summary>
+          <p style="margin-top: var(--space-sm);"><strong>這是我最穩的改 code 節奏：</strong></p>
+          <ol>
+            <li>先要計畫（Plan）</li>
+            <li>再要最小修改（Patch）</li>
+            <li>立刻跑起來驗證（Run） <em>【註】跑起來＝build/test/打開畫面看結果</em></li>
+          </ol>
+        </details>
       </div>
 
       <div class="card animate-on-scroll stagger-item">
         <img src="./assets/svg/tip-debug.svg" alt="Debug" class="card-icon">
-        <h3>技巧 3: 卡住時先要可能原因</h3>
-        <p>內容將在 Wave 3 填充...</p>
+        <h3>🔍 技巧 3: 卡住時先要可能原因</h3>
+        <p>我不會直接問「怎麼修」，而是問：可能原因有哪些（按機率排序）+ 每個原因最簡單怎麼驗證。</p>
+
+        <div class="prompt-card" style="margin-top: var(--space-sm);">
+          <div>我遇到錯誤：&lt;貼錯誤訊息&gt;</div>
+          <div>請列 3–5 個可能原因（按機率排序），每個原因給最小驗證步驟。</div>
+          <div>等我回報驗證結果後，你再給最推薦修法。</div>
+          <div class="actions">
+            <button class="btn btn-secondary copy-btn" data-copy="我遇到錯誤：<貼錯誤訊息>&#10;請列 3–5 個可能原因（按機率排序），每個原因給最小驗證步驟。&#10;等我回報驗證結果後，你再給最推薦修法。">📋 複製 Prompt</button>
+            <button class="btn btn-secondary stuck-btn" data-target="faq">❓ 卡住了</button>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -103,10 +199,27 @@
       <h2>進階工作方式</h2>
       <p style="text-align: center; color: var(--color-text-light); margin-bottom: 3rem;">讓 AI 從聊天變成可重複的工具</p>
 
-      <!-- Placeholder for Wave 3 content -->
       <div class="card animate-on-scroll">
         <h3>🎯 Skill / Rule / MCP</h3>
-        <p>內容將在 Wave 3 填充...</p>
+        <p>這三個概念，是我把 AI 從「一次性聊天」升級成「可重複流程」的關鍵。</p>
+
+        <details style="margin-top: var(--space-sm);">
+          <summary>展開了解更多</summary>
+
+          <h4 style="margin-top: var(--space-md);">Skill（技能）＝可重複的工作套路</h4>
+          <p>把常見任務做成 skill，例如：產出需求文件、產出測試計畫、產出 code review checklist。</p>
+
+          <h4 style="margin-top: var(--space-md);">Rule（規則）＝限制 AI，降低亂改風險</h4>
+          <p>我常用的 rule：</p>
+          <ul>
+            <li>不要重寫整個檔案，只改需要的部分</li>
+            <li>先給計畫，再執行</li>
+            <li>不確定就先問 2–3 個關鍵問題</li>
+          </ul>
+
+          <h4 style="margin-top: var(--space-md);">MCP（工具連接）＝讓 AI 真的能「做事」</h4>
+          <p>讓 AI 透過標準介面連到工具（repo、文件、資料庫），不是只能嘴砲。</p>
+        </details>
       </div>
     </div>
   </section>
@@ -117,14 +230,23 @@
       <h2>常見問題</h2>
       <img src="./assets/svg/faq-icon.svg" alt="FAQ" style="max-width: 80px; margin: 0 auto 2rem; display: block;">
 
-      <!-- Placeholder for Wave 3 accordion content -->
       <div class="accordion-item">
         <div class="accordion-header">
           <span>Q: 我看不懂程式在做什麼怎麼辦？</span>
           <span class="accordion-icon">+</span>
         </div>
         <div class="accordion-content">
-          <p>內容將在 Wave 3 填充...</p>
+          <p><strong>別急著看懂每一行，先試著「驗證結果」。</strong></p>
+          <p>我自己的做法是：</p>
+          <ol>
+            <li>先讓 AI 給我「這段 code 在做什麼」（1 句話）</li>
+            <li>再跑起來看結果是否符合預期</li>
+            <li>如果不懂某一段，再拿那段單獨問</li>
+          </ol>
+          <div class="prompt-card">
+            <div>這段程式的目的是什麼？（請用 1 句話白話說明）</div>
+            <div>如果我要測這段有沒有正常工作，最簡單的驗證方式是什麼？</div>
+          </div>
         </div>
       </div>
 
@@ -134,7 +256,19 @@
           <span class="accordion-icon">+</span>
         </div>
         <div class="accordion-content">
-          <p>內容將在 Wave 3 填充...</p>
+          <p><strong>不要只貼錯誤訊息，要加上「我做了什麼」。</strong></p>
+          <p>完整的問法包含三部分：</p>
+          <ol>
+            <li>我做了什麼操作</li>
+            <li>出現什麼錯誤（完整錯誤訊息）</li>
+            <li>我預期應該出現什麼結果</li>
+          </ol>
+          <div class="prompt-card">
+            <div>我在執行 [操作步驟]</div>
+            <div>出現錯誤：[完整錯誤訊息]</div>
+            <div>我預期應該 [預期結果]</div>
+            <div>請列出可能原因（按機率排序）和驗證方式。</div>
+          </div>
         </div>
       </div>
 
@@ -144,7 +278,19 @@
           <span class="accordion-icon">+</span>
         </div>
         <div class="accordion-content">
-          <p>內容將在 Wave 3 填充...</p>
+          <p><strong>先保存（git commit），再請 AI 幫你整理。</strong></p>
+          <p>我的整理流程：</p>
+          <ol>
+            <li>先 commit 目前的狀態（至少能回去）</li>
+            <li>列出「哪些檔案/功能是有用的」</li>
+            <li>請 AI 給出最小整理計畫（刪什麼、合併什麼）</li>
+            <li>一步步執行並驗證</li>
+          </ol>
+          <div class="prompt-card">
+            <div>我的專案現在有這些檔案：[列出檔案清單]</div>
+            <div>我想保留的功能是：[列出核心功能]</div>
+            <div>請給我最小的整理計畫（哪些可以刪、哪些可以合併）。</div>
+          </div>
         </div>
       </div>
 
@@ -154,7 +300,18 @@
           <span class="accordion-icon">+</span>
         </div>
         <div class="accordion-content">
-          <p>內容將在 Wave 3 填充...</p>
+          <p><strong>用對方式，可以省很多 token。</strong></p>
+          <p>我的省錢技巧：</p>
+          <ul>
+            <li>先寫文件（下次不用重複解釋）</li>
+            <li>不要每次都貼整個專案，只貼相關部分</li>
+            <li>用免費工具做前期規劃（Antigravity），再用付費工具精修</li>
+            <li>把常用流程做成 skill（可重複使用）</li>
+          </ul>
+          <div class="prompt-card">
+            <div>我不會貼整個專案。你先告訴我你需要哪 3 段資訊（檔案路徑/函式/錯誤 log）。</div>
+            <div>我貼給你後，你再給最小 patch。</div>
+          </div>
         </div>
       </div>
 
@@ -164,7 +321,17 @@
           <span class="accordion-icon">+</span>
         </div>
         <div class="accordion-content">
-          <p>內容將在 Wave 3 填充...</p>
+          <p><strong>讓 AI 告訴你「完成後應該看到什麼」。</strong></p>
+          <p>驗證三步驟：</p>
+          <ol>
+            <li>問 AI：「完成這步後，我應該看到什麼結果？」</li>
+            <li>實際執行並記錄結果</li>
+            <li>回報給 AI：「我看到 [實際結果]，是否正確？」</li>
+          </ol>
+          <div class="prompt-card">
+            <div>完成 [這個步驟] 後，我應該看到什麼結果？</div>
+            <div>請給我最簡單的驗證方式（不要太技術性）。</div>
+          </div>
         </div>
       </div>
     </div>
@@ -175,19 +342,30 @@
     <div class="container-narrow">
       <h2>小字典</h2>
 
-      <!-- Placeholder for Wave 3 content -->
       <dl style="background: white; padding: var(--space-md); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm);">
         <dt style="font-weight: 600; margin-top: var(--space-sm); color: var(--color-primary);">跑起來</dt>
-        <dd style="color: var(--color-text-light); margin-bottom: var(--space-sm);">內容將在 Wave 3 填充...</dd>
+        <dd style="color: var(--color-text-light); margin-bottom: var(--space-sm);">= build / test / 打開畫面看結果</dd>
+
+        <dt style="font-weight: 600; margin-top: var(--space-sm); color: var(--color-primary);">保存</dt>
+        <dd style="color: var(--color-text-light); margin-bottom: var(--space-sm);">= git commit（讓你能回到之前版本）</dd>
+
+        <dt style="font-weight: 600; margin-top: var(--space-sm); color: var(--color-primary);">README</dt>
+        <dd style="color: var(--color-text-light); margin-bottom: var(--space-sm);">= 專案說明文件</dd>
+
+        <dt style="font-weight: 600; margin-top: var(--space-sm); color: var(--color-primary);">部署</dt>
+        <dd style="color: var(--color-text-light); margin-bottom: var(--space-sm);">= 讓別人能在網路上看到</dd>
 
         <dt style="font-weight: 600; margin-top: var(--space-sm); color: var(--color-primary);">Skill</dt>
-        <dd style="color: var(--color-text-light); margin-bottom: var(--space-sm);">內容將在 Wave 3 填充...</dd>
+        <dd style="color: var(--color-text-light); margin-bottom: var(--space-sm);">= 可重複的工作套路</dd>
 
         <dt style="font-weight: 600; margin-top: var(--space-sm); color: var(--color-primary);">Rule</dt>
-        <dd style="color: var(--color-text-light); margin-bottom: var(--space-sm);">內容將在 Wave 3 填充...</dd>
+        <dd style="color: var(--color-text-light); margin-bottom: var(--space-sm);">= 限制 AI 的習慣與禁令</dd>
 
         <dt style="font-weight: 600; margin-top: var(--space-sm); color: var(--color-primary);">MCP</dt>
-        <dd style="color: var(--color-text-light); margin-bottom: var(--space-sm);">內容將在 Wave 3 填充...</dd>
+        <dd style="color: var(--color-text-light); margin-bottom: var(--space-sm);">= 讓 AI 連到工具的標準介面</dd>
+
+        <dt style="font-weight: 600; margin-top: var(--space-sm); color: var(--color-primary);">Docs-first</dt>
+        <dd style="color: var(--color-text-light);">= 先寫文件再開發</dd>
       </dl>
     </div>
   </section>
@@ -198,10 +376,22 @@
       <h2>💡 順帶一提</h2>
       <img src="./assets/svg/reveal-icon.svg" alt="Magic" style="max-width: 100px; margin: 0 auto 2rem; display: block;">
 
-      <!-- Placeholder for Wave 3 content -->
       <div class="card animate-on-scroll">
         <h3>這個教學網站本身也是用 AI 快速做出來的</h3>
-        <p>內容將在 Wave 3 填充...</p>
+        <p>我用 AI 開發最大的收穫不是「寫得更快」，而是：<strong>把做事方式變成可重複的流程</strong>（文件先行、技能化、規則化、工具化），再用跑起來驗證把風險壓下來。</p>
+
+        <details style="margin-top: var(--space-sm);">
+          <summary>展開看這個網站的開發流程</summary>
+          <p style="margin-top: var(--space-sm);"><strong>實際流程：</strong></p>
+          <ol>
+            <li><strong>需求文件</strong>：整合 2 份文件（需求規格 + 內容文稿）</li>
+            <li><strong>PFC 規劃</strong>：使用 han-agents 多代理系統分解任務</li>
+            <li><strong>分波執行</strong>：Wave 1 基礎 → Wave 2 結構 → Wave 3 內容 → Wave 4 部署</li>
+            <li><strong>QA 驗證</strong>：Critic agent 檢查驗收標準</li>
+            <li><strong>部署上線</strong>：GitHub Pages 靜態託管</li>
+          </ol>
+          <p>整個過程展示了：先聊清楚需求 → 產出文件 → 分步實作 → 每步驗證。</p>
+        </details>
       </div>
     </div>
   </section>
