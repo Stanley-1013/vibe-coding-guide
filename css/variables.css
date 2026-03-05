@@ -1,0 +1,143 @@
+/**
+ * CSS 設計系統 - 變數定義
+ *
+ * 此檔案定義整個網站的設計變數，包含：
+ * - 顏色系統（Color Palette）
+ * - 字型系統（Typography）
+ * - 間距系統（Spacing）
+ * - 圓角與陰影（Border Radius & Shadows）
+ * - 過場效果（Transitions）
+ */
+
+:root {
+  /* ========================================
+     Colors - 柔和現代配色
+     ======================================== */
+
+  /* Primary Colors - 主色調（紫色漸層） */
+  --color-primary: #667eea;
+  --color-secondary: #764ba2;
+  --color-accent: #f093fb;
+
+  /* Text Colors - 文字顏色 */
+  --color-text: #2d3748;          /* 深灰色，主要文字 */
+  --color-text-light: #718096;    /* 淺灰色，次要文字 */
+
+  /* Background Colors - 背景色 */
+  --color-bg: #ffffff;            /* 純白背景 */
+  --color-bg-light: #f7fafc;      /* 淺灰背景，用於區塊區隔 */
+
+  /* Border Colors - 邊框顏色 */
+  --color-border: #e2e8f0;        /* 淺灰邊框 */
+
+  /* Semantic Colors - 語義化顏色 */
+  --color-success: #48bb78;       /* 綠色，成功訊息 */
+  --color-warning: #f6ad55;       /* 橘色，警告訊息 */
+  --color-error: #f56565;         /* 紅色，錯誤訊息 */
+  --color-info: #4299e1;          /* 藍色，資訊訊息 */
+
+  /* ========================================
+     Typography - 字型系統
+     ======================================== */
+
+  /* Font Families */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+               'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  --font-mono: 'Fira Code', 'Monaco', 'Consolas', 'Courier New', monospace;
+
+  /* Font Sizes */
+  --font-size-xs: 0.75rem;        /* 12px */
+  --font-size-sm: 0.875rem;       /* 14px */
+  --font-size-base: 1rem;         /* 16px */
+  --font-size-lg: 1.125rem;       /* 18px */
+  --font-size-xl: 1.25rem;        /* 20px */
+  --font-size-2xl: 1.5rem;        /* 24px */
+  --font-size-3xl: 1.875rem;      /* 30px */
+  --font-size-4xl: 2.25rem;       /* 36px */
+  --font-size-5xl: 3rem;          /* 48px */
+
+  /* Line Heights */
+  --line-height-tight: 1.25;
+  --line-height-base: 1.5;
+  --line-height-relaxed: 1.75;
+
+  /* Font Weights */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* ========================================
+     Spacing - 間距系統（基於 8px grid）
+     ======================================== */
+
+  --space-xs: 0.5rem;     /* 8px */
+  --space-sm: 1rem;       /* 16px */
+  --space-md: 2rem;       /* 32px */
+  --space-lg: 4rem;       /* 64px */
+  --space-xl: 6rem;       /* 96px */
+  --space-2xl: 8rem;      /* 128px */
+
+  /* ========================================
+     Border Radius - 圓角
+     ======================================== */
+
+  --radius-sm: 0.5rem;    /* 8px */
+  --radius-md: 1rem;      /* 16px */
+  --radius-lg: 2rem;      /* 32px */
+  --radius-full: 9999px;  /* 完全圓角 */
+
+  /* ========================================
+     Shadows - 陰影效果
+     ======================================== */
+
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.2);
+  --shadow-xl: 0 12px 48px rgba(0, 0, 0, 0.25);
+
+  /* Colored Shadows - 主色陰影（用於強調） */
+  --shadow-primary: 0 4px 16px rgba(102, 126, 234, 0.3);
+  --shadow-accent: 0 4px 16px rgba(240, 147, 251, 0.3);
+
+  /* ========================================
+     Transitions - 過場效果
+     ======================================== */
+
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.5s ease;
+
+  /* Easing Functions - 緩動函數 */
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+
+  /* ========================================
+     Z-Index - 層級管理
+     ======================================== */
+
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-fixed: 300;
+  --z-modal: 400;
+  --z-tooltip: 500;
+
+  /* ========================================
+     Container - 容器最大寬度
+     ======================================== */
+
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1280px;
+}
+
+/**
+ * Dark Mode Support (未來可擴展)
+ */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* 未來可在此定義深色模式變數 */
+  }
+}
