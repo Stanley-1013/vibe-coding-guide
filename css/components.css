@@ -75,13 +75,13 @@
    Card - Glassmorphism 卡片
    ======================================== */
 .card {
-  background: var(--glass-bg);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-radius: var(--radius-lg);
   padding: var(--space-md);
   box-shadow: var(--glass-shadow);
-  border: 1px solid var(--glass-border);
+  border: 1px solid rgba(255, 255, 255, 0.5);
   transition: all var(--transition-base);
   position: relative;
   overflow: hidden;

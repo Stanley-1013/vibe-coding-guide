@@ -175,10 +175,17 @@ nav a:hover {
 section {
   padding: var(--space-xl) 0;
   position: relative;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
 }
 
 section:nth-child(even) {
-  background: var(--color-bg-light);
+  background: rgba(247, 250, 252, 0.8);
+  backdrop-filter: blur(10px);
+}
+
+section:nth-child(odd) {
+  background: rgba(255, 255, 255, 0.5);
 }
 
 section h2 {
