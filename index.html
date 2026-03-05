@@ -56,8 +56,16 @@
         <p>我會先推薦 Antigravity，原因很簡單：它比較像有人幫你「拆步驟＋帶你做」，而不是只丟一段答案。</p>
 
         <details style="margin-top: var(--space-sm);">
-          <summary>展開了解更多</summary>
-          <p style="margin-top: var(--space-sm);">我最常用它做三件事：</p>
+          <summary>展開了解如何使用</summary>
+
+          <p style="margin-top: var(--space-sm);"><strong>🎯 如何開始：</strong></p>
+          <ol>
+            <li>前往 <a href="https://antigravity.anthropic.com" target="_blank">antigravity.anthropic.com</a></li>
+            <li>登入後，直接在對話框輸入你的想法</li>
+            <li>使用下方的 prompt 範例，讓 AI 幫你拆解步驟</li>
+          </ol>
+
+          <p style="margin-top: var(--space-sm);"><strong>📝 我最常用它做三件事：</strong></p>
           <ul>
             <li>把一個想法拆成可執行的小步驟</li>
             <li>讓 AI 先把「我接下來要做什麼」講清楚</li>
@@ -65,13 +73,16 @@
           </ul>
 
           <div class="prompt-card">
-            <div>我想做一個小功能/小作品：&lt;一句話描述&gt;</div>
+            <div><strong>💬 第一次使用可以這樣問：</strong></div>
+            <div style="margin-top: var(--space-sm);">我想做一個小功能/小作品：&lt;一句話描述&gt;</div>
             <div>我是新手/我想降低風險。請先給我 5–10 個小步驟，每步只做一件事。</div>
             <div>請只帶我做第 1 步，並告訴我完成後應該看到什麼結果。</div>
             <div class="actions">
               <button class="btn btn-secondary copy-btn" data-copy="我想做一個小功能/小作品：<一句話描述>&#10;我是新手/我想降低風險。請先給我 5–10 個小步驟，每步只做一件事。&#10;請只帶我做第 1 步，並告訴我完成後應該看到什麼結果。">📋 複製 Prompt</button>
             </div>
           </div>
+
+          <p style="margin-top: var(--space-sm); font-size: 0.9em; color: var(--color-text-light);"><strong>小技巧：</strong>每次只讓它做一步，確認跑得起來再往下，這樣出錯時才好追。</p>
         </details>
       </div>
 
@@ -81,21 +92,33 @@
         <p>我最常用 Claude Code（整合在 VS Code），因為它更像「在專案裡幫你一起改」：能沿著 repo 結構走，比較適合做重構、補測試、修 bug、補文件。</p>
 
         <details style="margin-top: var(--space-sm);">
-          <summary>展開了解更多</summary>
-          <p style="margin-top: var(--space-sm);"><strong>我最常的搭配方式：</strong></p>
+          <summary>展開了解如何使用</summary>
+
+          <p style="margin-top: var(--space-sm);"><strong>🎯 如何開始：</strong></p>
+          <ol>
+            <li>在 VS Code 安裝「Claude Code」擴充套件</li>
+            <li>登入後，用 <code>Cmd/Ctrl + Shift + P</code> 開啟命令面板</li>
+            <li>選擇「Claude Code: Open Chat」開始對話</li>
+            <li>在專案資料夾中使用，它會自動讀取你的檔案結構</li>
+          </ol>
+
+          <p style="margin-top: var(--space-sm);"><strong>💡 我最常的搭配方式：</strong></p>
           <ul>
-            <li>ChatGPT or Antigravity：先把任務拆小、把文件寫清楚</li>
-            <li>Claude Code：在 IDE 裡一步步把 code 實作到可跑可驗證</li>
+            <li><strong>先用 ChatGPT/Antigravity</strong>：拆解任務、寫清楚文件</li>
+            <li><strong>再用 Claude Code</strong>：在 IDE 裡一步步實作到可跑可驗證</li>
           </ul>
 
           <div class="prompt-card">
-            <div>先不要一次改很多。請先列出你的修改計畫（要改哪些檔案、每步做什麼）。</div>
+            <div><strong>💬 實作時可以這樣問：</strong></div>
+            <div style="margin-top: var(--space-sm);">先不要一次改很多。請先列出你的修改計畫（要改哪些檔案、每步做什麼）。</div>
             <div>我確認後你再從第 1 步開始，且每一步都要能跑得起來。</div>
             <div>如果出錯，我會貼錯誤訊息給你，你再針對錯誤修。</div>
             <div class="actions">
               <button class="btn btn-secondary copy-btn" data-copy="先不要一次改很多。請先列出你的修改計畫（要改哪些檔案、每步做什麼）。&#10;我確認後你再從第 1 步開始，且每一步都要能跑得起來。&#10;如果出錯，我會貼錯誤訊息給你，你再針對錯誤修。">📋 複製 Prompt</button>
             </div>
           </div>
+
+          <p style="margin-top: var(--space-sm); font-size: 0.9em; color: var(--color-text-light);"><strong>小技巧：</strong>在對話中可以用 <code>@檔案名稱</code> 讓它看特定檔案，用 <code>@folder</code> 讓它看整個資料夾。</p>
         </details>
       </div>
 
@@ -138,15 +161,36 @@
         </div>
 
         <details style="margin-top: var(--space-sm);">
-          <summary>為什麼這樣做？</summary>
+          <summary>為什麼這樣做？深入理解文件先行</summary>
           <p style="margin-top: var(--space-sm);">因為 AI 最容易翻車的情況是：需求在腦袋、聊天、零碎訊息裡。它只能猜，然後就會「看起來合理但其實不對」。</p>
-          <p><strong>最小需求文件通常只要包含：</strong></p>
+
+          <p><strong>📝 最小需求文件（入門版）：</strong></p>
           <ul>
             <li><strong>Goal</strong>：我要做什麼（1 句話）</li>
             <li><strong>User flow</strong>：使用者怎麼操作（3–5 行）</li>
             <li><strong>Scope</strong>：這次做哪些、不做哪些</li>
             <li><strong>Acceptance</strong>：怎樣算完成（可驗收條件）</li>
           </ul>
+
+          <p style="margin-top: var(--space-sm);"><strong>📚 進階文件（複雜專案）：</strong></p>
+          <p>當專案變大，你可能需要更詳細的文件結構：</p>
+          <ul>
+            <li><strong>Technical Context</strong>：使用哪些技術、為什麼選它們</li>
+            <li><strong>Architecture</strong>：系統如何拆分、模組如何互動</li>
+            <li><strong>Data Model</strong>：資料結構、關聯、限制</li>
+            <li><strong>Edge Cases</strong>：邊界情況、錯誤處理、效能考量</li>
+            <li><strong>Testing Strategy</strong>：怎麼驗證、測試案例清單</li>
+          </ul>
+
+          <p style="margin-top: var(--space-sm);"><strong>💡 Context Engineering 概念：</strong></p>
+          <p>「給對的資訊」比「給很多資訊」重要。不是把整個專案都丟給 AI，而是：</p>
+          <ul>
+            <li><strong>分層給</strong>：先給高層架構 → 再給相關模組 → 最後給具體實作</li>
+            <li><strong>指出重點</strong>：明確說「這個檔案是 X 的入口」、「這段程式處理 Y 邏輯」</li>
+            <li><strong>限制範圍</strong>：「這次只改認證流程，不要動到其他部分」</li>
+          </ul>
+
+          <p style="margin-top: var(--space-sm); font-size: 0.9em; color: var(--color-text-light);"><strong>記住：</strong>文件不是一次寫完，而是在過程中逐步補充。從最小版本開始，遇到問題再回來補。</p>
         </details>
       </div>
 
@@ -378,19 +422,27 @@
 
       <div class="card animate-on-scroll">
         <h3>這個教學網站本身也是用 AI 快速做出來的</h3>
-        <p>我用 AI 開發最大的收穫不是「寫得更快」，而是：<strong>把做事方式變成可重複的流程</strong>（文件先行、技能化、規則化、工具化），再用跑起來驗證把風險壓下來。</p>
+        <p>我用 AI 開發最大的收穫不是「寫得更快」，而是：<strong>把做事方式變成可重複的流程</strong>（文件先行、分步驗證、規則化），再用實際跑起來把風險壓下來。</p>
 
         <details style="margin-top: var(--space-sm);">
           <summary>展開看這個網站的開發流程</summary>
-          <p style="margin-top: var(--space-sm);"><strong>實際流程：</strong></p>
+          <p style="margin-top: var(--space-sm);"><strong>🔨 實際開發流程：</strong></p>
           <ol>
-            <li><strong>需求文件</strong>：整合 2 份文件（需求規格 + 內容文稿）</li>
-            <li><strong>PFC 規劃</strong>：使用 han-agents 多代理系統分解任務</li>
-            <li><strong>分波執行</strong>：Wave 1 基礎 → Wave 2 結構 → Wave 3 內容 → Wave 4 部署</li>
-            <li><strong>QA 驗證</strong>：Critic agent 檢查驗收標準</li>
-            <li><strong>部署上線</strong>：GitHub Pages 靜態託管</li>
+            <li><strong>需求整理</strong>：先把 2 份文件（需求規格 + 內容文稿）整合成清楚的開發規格</li>
+            <li><strong>規劃分解</strong>：讓 AI 把任務拆成 4 個階段（基礎建設 → 結構建立 → 內容填充 → 部署上線）</li>
+            <li><strong>分階段執行</strong>：每個階段做完就測試，確認可以跑才往下</li>
+            <li><strong>品質檢查</strong>：完成後讓 AI 重新檢查是否符合驗收標準</li>
+            <li><strong>部署上線</strong>：推送到 GitHub Pages，確認線上版本正常</li>
           </ol>
-          <p>整個過程展示了：先聊清楚需求 → 產出文件 → 分步實作 → 每步驗證。</p>
+
+          <p style="margin-top: var(--space-sm);"><strong>💡 關鍵心法：</strong></p>
+          <ul>
+            <li><strong>文件先行</strong>：不急著寫 code，先把「要做什麼」說清楚</li>
+            <li><strong>小步快跑</strong>：每次改一點點，立刻跑起來驗證</li>
+            <li><strong>問對問題</strong>：不是問「幫我做」，而是問「給我計畫 → 我確認 → 執行第一步」</li>
+          </ul>
+
+          <p style="margin-top: var(--space-sm); font-size: 0.9em; color: var(--color-text-light);">整個網站從零到上線大約 2 小時，但重點不是快，而是過程中每一步都可控、可驗證。</p>
         </details>
       </div>
     </div>
