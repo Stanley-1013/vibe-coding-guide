@@ -105,16 +105,16 @@ nav a.active {
 }
 
 /* ========================================
-   Hero Section - 專業首頁
+   Hero Section - 專業首頁（視覺強化版）
    ======================================== */
 #hero {
-  min-height: 70vh;
+  min-height: 75vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   background: linear-gradient(180deg, #ffffff 0%, var(--color-gray-50) 100%);
-  padding: var(--space-24) 0 var(--space-16);
+  padding: var(--space-32) 0 var(--space-24);
   position: relative;
 }
 
@@ -124,19 +124,21 @@ nav a.active {
 }
 
 #hero h1 {
-  margin-bottom: var(--space-6);
+  margin-bottom: var(--space-8);
   background: var(--gradient-hero);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   animation: fadeInUp 0.8s ease-out;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 #hero .subtitle {
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-medium);
   color: var(--color-text-secondary);
-  margin-bottom: var(--space-8);
-  max-width: 700px;
+  margin-bottom: var(--space-12);
+  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
   line-height: var(--line-height-relaxed);
@@ -145,15 +147,16 @@ nav a.active {
 
 #hero .btn {
   animation: fadeInUp 0.8s ease-out 0.4s backwards;
-  font-size: var(--font-size-lg);
-  padding: var(--space-4) var(--space-8);
+  font-size: var(--font-size-xl);
+  padding: var(--space-5) var(--space-10);
 }
 
 #hero img {
-  max-width: 360px;
-  margin: 0 auto var(--space-8);
-  opacity: 0.9;
+  max-width: 400px;
+  margin: 0 auto var(--space-12);
+  opacity: 0.95;
   animation: float 6s ease-in-out infinite;
+  filter: drop-shadow(0 10px 30px rgba(84, 104, 255, 0.2));
 }
 
 @keyframes fadeInUp {
@@ -177,25 +180,25 @@ nav a.active {
 }
 
 /* ========================================
-   Sections - 內容區塊
+   Sections - 內容區塊（視覺強化版）
    ======================================== */
 section {
-  padding: var(--space-20) 0;
+  padding: var(--space-24) 0;
   position: relative;
 }
 
 section:nth-child(even) {
-  background: var(--color-bg-secondary);
+  background: linear-gradient(180deg, var(--color-bg-secondary) 0%, #ffffff 100%);
 }
 
 section h2 {
   text-align: center;
-  margin-bottom: var(--space-4);
+  margin-bottom: var(--space-6);
   font-size: var(--font-size-4xl);
   font-weight: var(--font-weight-extrabold);
-  letter-spacing: var(--letter-spacing-tight);
+  letter-spacing: var(--letter-spacing-tighter);
   position: relative;
-  padding-bottom: var(--space-6);
+  padding-bottom: var(--space-8);
 }
 
 section h2::after {
@@ -204,19 +207,22 @@ section h2::after {
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 80px;
-  height: 4px;
+  width: 100px;
+  height: 5px;
   background: var(--gradient-primary);
   border-radius: var(--radius-full);
+  box-shadow: 0 2px 8px rgba(84, 104, 255, 0.3);
 }
 
 section > .container > p,
 section > .container-narrow > p {
   text-align: center;
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-medium);
   color: var(--color-text-secondary);
-  margin-bottom: var(--space-12);
+  margin-bottom: var(--space-16);
   max-width: 100%;
+  line-height: var(--line-height-relaxed);
 }
 
 /* ========================================

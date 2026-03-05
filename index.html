@@ -28,6 +28,7 @@
       <ul id="nav-menu">
         <li><a href="#tools">工具</a></li>
         <li><a href="#tips">技巧</a></li>
+        <li><a href="#resources">資源</a></li>
         <li><a href="#faq">FAQ</a></li>
         <li><a href="#glossary">字典</a></li>
       </ul>
@@ -190,6 +191,27 @@
             <li><strong>限制範圍</strong>：「這次只改認證流程，不要動到其他部分」</li>
           </ul>
 
+          <p style="margin-top: var(--space-sm);"><strong>⚠️ 常見錯誤：</strong></p>
+          <ul>
+            <li><strong>文件太簡略</strong>：只寫「做一個登入功能」→ AI 會自己腦補很多細節，結果跟你想的不一樣</li>
+            <li><strong>文件太複雜</strong>：一次寫 10 頁規格 → AI 反而抓不到重點，或是做了一堆你不需要的功能</li>
+            <li><strong>沒有 Scope</strong>：沒說「不做什麼」→ AI 可能順手加了很多「看起來該做」的功能</li>
+          </ul>
+
+          <p style="margin-top: var(--space-sm);"><strong>✨ 實際案例：做一個待辦事項 App</strong></p>
+          <div style="background: var(--color-gray-50); padding: var(--space-sm); border-radius: var(--radius-md); margin-top: var(--space-xs);">
+            <p style="margin: 0;"><strong>Goal：</strong>一個簡單的待辦清單，能新增、刪除、標記完成</p>
+            <p style="margin: var(--space-xs) 0 0;"><strong>User flow：</strong></p>
+            <ol style="margin: var(--space-xs) 0 0;">
+              <li>打開頁面 → 看到輸入框和已有的待辦</li>
+              <li>輸入文字 → 按 Enter → 新增到清單</li>
+              <li>點擊待辦 → 標記完成/取消完成</li>
+              <li>點 X → 刪除待辦</li>
+            </ol>
+            <p style="margin: var(--space-xs) 0 0;"><strong>Scope：</strong>只做單頁面，不做登入、不做資料庫、不做分類</p>
+            <p style="margin: var(--space-xs) 0 0;"><strong>Acceptance：</strong>能新增、刪除、標記完成，重新整理後資料還在（用 localStorage）</p>
+          </div>
+
           <p style="margin-top: var(--space-sm); font-size: 0.9em; color: var(--color-text-light);"><strong>記住：</strong>文件不是一次寫完，而是在過程中逐步補充。從最小版本開始，遇到問題再回來補。</p>
         </details>
       </div>
@@ -212,10 +234,37 @@
           <summary>完整流程：Plan → Patch → Run</summary>
           <p style="margin-top: var(--space-sm);"><strong>這是我最穩的改 code 節奏：</strong></p>
           <ol>
-            <li>先要計畫（Plan）</li>
-            <li>再要最小修改（Patch）</li>
-            <li>立刻跑起來驗證（Run） <em>【註】跑起來＝build/test/打開畫面看結果</em></li>
+            <li><strong>Plan（計畫）</strong>：先要一個 3–6 步的計畫，了解全貌</li>
+            <li><strong>Patch（最小修改）</strong>：只要第一步的修改，不要一次全部</li>
+            <li><strong>Run（驗證）</strong>：立刻跑起來看結果 <em>【註】跑起來＝build/test/打開畫面看結果</em></li>
+            <li><strong>回報</strong>：告訴 AI「成功」或「錯誤訊息」</li>
+            <li><strong>重複</strong>：AI 再給下一步，繼續循環</li>
           </ol>
+
+          <p style="margin-top: var(--space-sm);"><strong>⚠️ 反例：一次改太多會發生什麼？</strong></p>
+          <div style="background: #fee2e2; padding: var(--space-sm); border-radius: var(--radius-md); border-left: 4px solid #ef4444; margin-top: var(--space-xs);">
+            <p style="margin: 0; color: var(--color-text);"><strong>壞習慣：</strong>「請幫我完成整個登入功能」</p>
+            <p style="margin: var(--space-xs) 0 0; color: var(--color-text);">→ AI 一次給你改了 5 個檔案、新增 3 個功能</p>
+            <p style="margin: var(--space-xs) 0 0; color: var(--color-text);">→ 跑起來出錯了，你不知道是哪一步出問題</p>
+            <p style="margin: var(--space-xs) 0 0; color: var(--color-text);">→ 只能全部回頭重來，浪費時間</p>
+          </div>
+
+          <div style="background: #d1fae5; padding: var(--space-sm); border-radius: var(--radius-md); border-left: 4px solid #10b981; margin-top: var(--space-sm);">
+            <p style="margin: 0; color: var(--color-text);"><strong>好習慣：</strong>「請先給計畫，再給第一步」</p>
+            <p style="margin: var(--space-xs) 0 0; color: var(--color-text);">→ AI 給計畫：1) 建 form 2) 加驗證 3) 串 API 4) 處理錯誤</p>
+            <p style="margin: var(--space-xs) 0 0; color: var(--color-text);">→ 第一步：只改一個檔案，加一個 form</p>
+            <p style="margin: var(--space-xs) 0 0; color: var(--color-text);">→ 跑起來，畫面出現了 ✓ → 繼續下一步</p>
+            <p style="margin: var(--space-xs) 0 0; color: var(--color-text);">→ 出錯了也好追，只要檢查最後一步的改動</p>
+          </div>
+
+          <p style="margin-top: var(--space-sm);"><strong>💡 如何判斷「最小」？</strong></p>
+          <ul>
+            <li><strong>只改一個功能</strong>：不要同時加新功能和改舊功能</li>
+            <li><strong>能獨立驗證</strong>：這一步做完應該能看到某個明確的改變（畫面、log、測試通過）</li>
+            <li><strong>改動少於 3 個檔案</strong>：如果需要改很多檔案，可能這步太大了，再拆小一點</li>
+          </ul>
+
+          <p style="margin-top: var(--space-sm); font-size: 0.9em; color: var(--color-text-light);"><strong>記住：</strong>小步快跑不是慢，而是穩。出錯時能快速定位問題，反而比一次改完快很多。</p>
         </details>
       </div>
 
@@ -233,6 +282,43 @@
             <button class="btn btn-secondary stuck-btn" data-target="faq">❓ 卡住了</button>
           </div>
         </div>
+
+        <details style="margin-top: var(--space-sm);">
+          <summary>為什麼要「原因排序」而不是直接修？</summary>
+          <p style="margin-top: var(--space-sm);">因為直接問「怎麼修」，AI 只能猜最有可能的原因，如果猜錯你就浪費時間了。但如果先列出所有可能原因，你可以快速驗證找出真兇，再對症下藥。</p>
+
+          <p style="margin-top: var(--space-sm);"><strong>✨ 實際案例：畫面顯示錯誤</strong></p>
+          <div style="background: var(--color-gray-50); padding: var(--space-sm); border-radius: var(--radius-md); margin-top: var(--space-xs);">
+            <p style="margin: 0;"><strong>錯誤訊息：</strong><code>Cannot read property 'name' of undefined</code></p>
+            <p style="margin: var(--space-xs) 0 0;"><strong>AI 列出可能原因（按機率）：</strong></p>
+            <ol style="margin: var(--space-xs) 0 0;">
+              <li><strong>API 還沒回傳資料</strong>（機率 60%） → 驗證：加 console.log 看資料何時載入</li>
+              <li><strong>API 回傳的資料結構不對</strong>（機率 25%） → 驗證：console.log 看實際資料長什麼樣</li>
+              <li><strong>變數拼錯字</strong>（機率 10%） → 驗證：檢查變數名稱</li>
+              <li><strong>條件判斷有問題</strong>（機率 5%） → 驗證：檢查 if 條件</li>
+            </ol>
+            <p style="margin: var(--space-xs) 0 0;"><strong>結果：</strong>驗證第 1 項，發現確實是資料還沒載入就渲染了 → 加個 loading 狀態解決</p>
+          </div>
+
+          <p style="margin-top: var(--space-sm);"><strong>💡 常見錯誤原因清單（備查）：</strong></p>
+          <ul>
+            <li><strong>資料相關</strong>：API 還沒回傳、資料結構不對、變數是 null/undefined</li>
+            <li><strong>時機相關</strong>：操作順序不對、非同步沒等完、DOM 還沒載入</li>
+            <li><strong>路徑相關</strong>：檔案路徑錯誤、import 路徑錯誤、URL 不對</li>
+            <li><strong>邏輯相關</strong>：條件判斷有誤、迴圈邊界錯誤、狀態沒更新</li>
+            <li><strong>環境相關</strong>：缺套件、版本不對、環境變數沒設定</li>
+          </ul>
+
+          <p style="margin-top: var(--space-sm);"><strong>⚠️ 除錯技巧：</strong></p>
+          <ul>
+            <li><strong>複製完整錯誤訊息</strong>：包含檔案路徑、行號、堆疊追蹤（stack trace）</li>
+            <li><strong>說明操作步驟</strong>：「我點了 X 按鈕 → 出現錯誤」而不是只貼錯誤</li>
+            <li><strong>一次只驗證一個原因</strong>：不要同時改多個地方，否則不知道哪個有效</li>
+            <li><strong>驗證完回報結果</strong>：「試了第 1 項，發現資料確實是空的」</li>
+          </ul>
+
+          <p style="margin-top: var(--space-sm); font-size: 0.9em; color: var(--color-text-light);"><strong>記住：</strong>除錯不是猜謎，而是科學方法 — 假設 → 驗證 → 結論。原因排序就是幫你快速找到正確的假設。</p>
+        </details>
       </div>
     </div>
   </section>
@@ -264,6 +350,76 @@
           <h4 style="margin-top: var(--space-md);">MCP（工具連接）＝讓 AI 真的能「做事」</h4>
           <p>讓 AI 透過標準介面連到工具（repo、文件、資料庫），不是只能嘴砲。</p>
         </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Learning Resources Section -->
+  <section id="resources" style="background: var(--color-bg-secondary);">
+    <div class="container-narrow">
+      <h2>學習資源</h2>
+      <p style="text-align: center; color: var(--color-text-light); margin-bottom: 3rem;">持續學習 AI 開發的管道</p>
+
+      <div class="grid grid-2" style="gap: var(--space-md);">
+        <div class="card animate-on-scroll">
+          <h3>📺 YouTube 頻道推薦</h3>
+          <p>我自己常看的頻道：</p>
+          <ul style="margin-top: var(--space-sm);">
+            <li><strong>AI超元域</strong> - 深入淺出的 AI 工具教學和實戰應用</li>
+            <li><strong>技術爬爬蝦</strong> - 程式設計與開發工具分享</li>
+            <li><strong>Fireship</strong> - 快速了解新技術（英文，但有字幕）</li>
+            <li><strong>Web Dev Simplified</strong> - 前端開發教學</li>
+            <li><strong>Anthropic</strong> - Claude 官方頻道，第一手資訊</li>
+          </ul>
+          <p style="margin-top: var(--space-sm); font-size: 0.9em; color: var(--color-text-light);"><strong>建議：</strong>不用每個都追，選 1-2 個定期看就好，重點是實際動手做。</p>
+        </div>
+
+        <div class="card animate-on-scroll">
+          <h3>👥 社群與討論</h3>
+          <p>交流學習效果更好：</p>
+          <ul style="margin-top: var(--space-sm);">
+            <li><strong>Facebook 社團</strong>：搜尋「AI 開發」、「程式設計」相關社團</li>
+            <li><strong>Threads</strong>：追蹤 AI 開發者、工具官方帳號</li>
+            <li><strong>Discord/Slack</strong>：加入開發者社群（如 Claude Discord）</li>
+            <li><strong>Twitter/X</strong>：追蹤技術推手和工具更新</li>
+          </ul>
+          <p style="margin-top: var(--space-sm); font-size: 0.9em; color: var(--color-text-light);"><strong>建議：</strong>不要只看不問，遇到問題就發文，社群裡很多人願意幫忙。</p>
+        </div>
+
+        <div class="card animate-on-scroll">
+          <h3>📚 實戰練習</h3>
+          <p>看再多不如實際做：</p>
+          <ul style="margin-top: var(--space-sm);">
+            <li><strong>從小專案開始</strong>：待辦清單、計算機、個人網頁</li>
+            <li><strong>克隆現有產品</strong>：試著用 AI 重現簡化版的知名 App</li>
+            <li><strong>參加活動</strong>：Hackathon、線上挑戰（如 100 Days of Code）</li>
+            <li><strong>開源貢獻</strong>：找簡單的 issue 試著修（標籤：good first issue）</li>
+          </ul>
+          <p style="margin-top: var(--space-sm); font-size: 0.9em; color: var(--color-text-light);"><strong>建議：</strong>每個專案都推到 GitHub，建立作品集，也方便回頭看自己的進步。</p>
+        </div>
+
+        <div class="card animate-on-scroll">
+          <h3>🔖 實用資源</h3>
+          <p>工具文件和學習平台：</p>
+          <ul style="margin-top: var(--space-sm);">
+            <li><strong>Claude 文件</strong>：<a href="https://docs.anthropic.com" target="_blank">docs.anthropic.com</a> - 官方使用指南</li>
+            <li><strong>MDN Web Docs</strong>：<a href="https://developer.mozilla.org" target="_blank">developer.mozilla.org</a> - 網頁開發百科</li>
+            <li><strong>freeCodeCamp</strong>：<a href="https://www.freecodecamp.org" target="_blank">freecodecamp.org</a> - 免費程式課程</li>
+            <li><strong>GitHub</strong>：搜尋「awesome-list」找各種精選資源清單</li>
+          </ul>
+          <p style="margin-top: var(--space-sm); font-size: 0.9em; color: var(--color-text-light);"><strong>建議：</strong>把常用的文件加到瀏覽器書籤，隨時查閱。</p>
+        </div>
+      </div>
+
+      <div class="card animate-on-scroll" style="margin-top: var(--space-md); background: linear-gradient(135deg, var(--color-primary-lighter) 0%, var(--color-accent-lighter, #e0f2fe) 100%);">
+        <h3>💡 學習心法</h3>
+        <ul>
+          <li><strong>不要貪多</strong>：一次專注學一個工具或技術，學到能做出東西再換</li>
+          <li><strong>做中學</strong>：看教學時同步動手做，不要只看不練</li>
+          <li><strong>記錄筆記</strong>：遇到問題和解法都記下來，下次遇到直接查</li>
+          <li><strong>定期回顧</strong>：每週看看自己做了什麼、學到什麼、下週想試什麼</li>
+          <li><strong>找人交流</strong>：有夥伴一起學習，進步會快很多</li>
+        </ul>
       </div>
     </div>
   </section>
@@ -376,6 +532,77 @@
             <div>完成 [這個步驟] 後，我應該看到什麼結果？</div>
             <div>請給我最簡單的驗證方式（不要太技術性）。</div>
           </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <span>Q: AI 給的答案不能用怎麼辦？</span>
+          <span class="accordion-icon">+</span>
+        </div>
+        <div class="accordion-content">
+          <p><strong>先確認是「不能用」還是「不知道怎麼用」。</strong></p>
+          <p>常見情況和對策：</p>
+          <ul>
+            <li><strong>情況 1：跑起來出錯</strong> → 貼完整錯誤訊息，用技巧 3 找原因</li>
+            <li><strong>情況 2：能跑但不符合需求</strong> → 檢查是不是需求沒說清楚，回去補文件</li>
+            <li><strong>情況 3：看不懂 AI 的解法</strong> → 問「請用白話解釋這段在做什麼」</li>
+            <li><strong>情況 4：方案太複雜</strong> → 明確要求「請給最簡單的做法，不要過度設計」</li>
+          </ul>
+          <div class="prompt-card">
+            <div>你給的這段 [code/方案]，我 [遇到什麼問題]。</div>
+            <div>能不能換一個更簡單/更符合 [需求] 的做法？</div>
+          </div>
+          <p style="margin-top: var(--space-sm); font-size: 0.9em; color: var(--color-text-light);"><strong>記住：</strong>AI 不是萬能，但它可以無限次重試。不怕問題多，就怕不問。</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <span>Q: 如何判斷 AI 給的方案好不好？</span>
+          <span class="accordion-icon">+</span>
+        </div>
+        <div class="accordion-content">
+          <p><strong>用這四個標準快速判斷：</strong></p>
+          <ol>
+            <li><strong>能不能跑起來？</strong>（最基本）</li>
+            <li><strong>有沒有達成需求？</strong>（對照你的驗收條件）</li>
+            <li><strong>我看得懂嗎？</strong>（太複雜的方案通常不是好方案）</li>
+            <li><strong>容易改嗎？</strong>（如果之後要加功能，會不會很麻煩）</li>
+          </ol>
+          <p style="margin-top: var(--space-sm);"><strong>紅旗警訊（可能有問題的方案）：</strong></p>
+          <ul>
+            <li>一次改了超過 5 個檔案</li>
+            <li>引入了很多新的套件或工具</li>
+            <li>解釋不清楚為什麼要這樣做</li>
+            <li>沒有考慮錯誤處理</li>
+          </ul>
+          <div class="prompt-card">
+            <div>請用白話解釋你這個方案的優缺點。</div>
+            <div>有沒有更簡單的做法？為什麼選這個方案而不是簡單的？</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <span>Q: 專案變大變複雜怎麼辦？</span>
+          <span class="accordion-icon">+</span>
+        </div>
+        <div class="accordion-content">
+          <p><strong>專案大不可怕，可怕的是一開始沒有規劃。</strong></p>
+          <p>管理大專案的技巧：</p>
+          <ul>
+            <li><strong>模組化</strong>：把功能拆成獨立模組，每個模組可以單獨測試</li>
+            <li><strong>寫 README</strong>：說明專案結構、每個資料夾放什麼、如何開始</li>
+            <li><strong>版本控制</strong>：常常 commit，每個 commit 做一件事，寫清楚做了什麼</li>
+            <li><strong>定期整理</strong>：刪掉不用的檔案、合併重複的程式碼</li>
+          </ul>
+          <div class="prompt-card">
+            <div>我的專案現在有 [列出主要功能]。</div>
+            <div>請幫我規劃一個清楚的資料夾結構，讓我知道每個檔案該放哪裡。</div>
+          </div>
+          <p style="margin-top: var(--space-sm); font-size: 0.9em; color: var(--color-text-light);"><strong>記住：</strong>大專案是從小專案長出來的，一開始就保持整潔，後面就不用重構。</p>
         </div>
       </div>
     </div>
