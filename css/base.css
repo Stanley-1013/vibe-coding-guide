@@ -23,42 +23,13 @@ html {
 body {
   font-family: var(--font-sans);
   color: var(--color-text);
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  background: linear-gradient(135deg, #f5f7fa 0%, #e3e8f0 100%);
   background-attachment: fixed;
   line-height: var(--line-height-base);
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  position: relative;
   min-height: 100vh;
-}
-
-/* 動態漸層背景動畫 */
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background:
-    radial-gradient(circle at 20% 50%, rgba(102, 126, 234, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(240, 147, 251, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 40% 90%, rgba(79, 172, 254, 0.08) 0%, transparent 50%);
-  pointer-events: none;
-  z-index: 0;
-  animation: bgShift 20s ease infinite;
-}
-
-@keyframes bgShift {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.8; }
-}
-
-/* 確保內容在背景之上 */
-body > * {
-  position: relative;
-  z-index: 1;
 }
 
 /* Headings */
