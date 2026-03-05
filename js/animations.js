@@ -21,7 +21,7 @@ function initScrollAnimations() {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
+        entry.target.classList.add('is-visible');
         // 可選：觀察一次後停止觀察（提升性能）
         // observer.unobserve(entry.target);
       }
@@ -45,7 +45,7 @@ function initStaggerAnimations() {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
+        entry.target.classList.add('is-visible');
       }
     });
   }, observerOptions);
@@ -87,7 +87,7 @@ function initFadeIn() {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
+        entry.target.classList.add('is-visible');
       }
     });
   }, observerOptions);
@@ -108,7 +108,7 @@ function initSlideIn() {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
+        entry.target.classList.add('is-visible');
       }
     });
   }, observerOptions);
