@@ -11,30 +11,51 @@
 
 :root {
   /* ========================================
-     Colors - 柔和現代配色
+     Colors - 現代化多彩漸層配色
      ======================================== */
 
-  /* Primary Colors - 主色調（紫色漸層） */
+  /* Primary Gradients - 主要漸層色 */
+  --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --gradient-accent: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  --gradient-warm: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+  --gradient-cool: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+  --gradient-hero: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+
+  /* Solid Colors - 純色（用於文字等） */
   --color-primary: #667eea;
   --color-secondary: #764ba2;
   --color-accent: #f093fb;
+  --color-blue: #4facfe;
+  --color-pink: #fa709a;
+  --color-yellow: #fee140;
 
   /* Text Colors - 文字顏色 */
-  --color-text: #2d3748;          /* 深灰色，主要文字 */
-  --color-text-light: #718096;    /* 淺灰色，次要文字 */
+  --color-text: #1a202c;          /* 更深的主文字色 */
+  --color-text-light: #4a5568;    /* 中度灰色次要文字 */
+  --color-text-muted: #a0aec0;    /* 淺灰色靜態文字 */
 
   /* Background Colors - 背景色 */
-  --color-bg: #ffffff;            /* 純白背景 */
-  --color-bg-light: #f7fafc;      /* 淺灰背景，用於區塊區隔 */
+  --color-bg: #ffffff;
+  --color-bg-gradient: linear-gradient(180deg, #ffffff 0%, #f7fafc 100%);
+  --color-bg-dark: #1a202c;
+  --color-bg-glass: rgba(255, 255, 255, 0.7);
+  --color-bg-glass-dark: rgba(255, 255, 255, 0.1);
 
   /* Border Colors - 邊框顏色 */
-  --color-border: #e2e8f0;        /* 淺灰邊框 */
+  --color-border: rgba(226, 232, 240, 0.8);
+  --color-border-light: rgba(237, 242, 247, 0.6);
+
+  /* Glassmorphism */
+  --glass-bg: rgba(255, 255, 255, 0.75);
+  --glass-border: rgba(255, 255, 255, 0.18);
+  --glass-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
 
   /* Semantic Colors - 語義化顏色 */
-  --color-success: #48bb78;       /* 綠色，成功訊息 */
-  --color-warning: #f6ad55;       /* 橘色，警告訊息 */
-  --color-error: #f56565;         /* 紅色，錯誤訊息 */
-  --color-info: #4299e1;          /* 藍色，資訊訊息 */
+  --color-success: #48bb78;
+  --color-warning: #f6ad55;
+  --color-error: #f56565;
+  --color-info: #4299e1;
 
   /* ========================================
      Typography - 字型系統
@@ -45,16 +66,17 @@
                'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
   --font-mono: 'Fira Code', 'Monaco', 'Consolas', 'Courier New', monospace;
 
-  /* Font Sizes */
+  /* Font Sizes - 更大膽的字體層次 */
   --font-size-xs: 0.75rem;        /* 12px */
   --font-size-sm: 0.875rem;       /* 14px */
   --font-size-base: 1rem;         /* 16px */
   --font-size-lg: 1.125rem;       /* 18px */
   --font-size-xl: 1.25rem;        /* 20px */
   --font-size-2xl: 1.5rem;        /* 24px */
-  --font-size-3xl: 1.875rem;      /* 30px */
-  --font-size-4xl: 2.25rem;       /* 36px */
-  --font-size-5xl: 3rem;          /* 48px */
+  --font-size-3xl: 2rem;          /* 32px */
+  --font-size-4xl: 2.75rem;       /* 44px */
+  --font-size-5xl: 3.5rem;        /* 56px */
+  --font-size-6xl: 4.5rem;        /* 72px */
 
   /* Line Heights */
   --line-height-tight: 1.25;
@@ -88,17 +110,24 @@
   --radius-full: 9999px;  /* 完全圓角 */
 
   /* ========================================
-     Shadows - 陰影效果
+     Shadows - 增強陰影效果
      ======================================== */
 
-  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
-  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
-  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.2);
-  --shadow-xl: 0 12px 48px rgba(0, 0, 0, 0.25);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.16);
+  --shadow-xl: 0 16px 64px rgba(0, 0, 0, 0.2);
+  --shadow-2xl: 0 24px 96px rgba(0, 0, 0, 0.25);
 
-  /* Colored Shadows - 主色陰影（用於強調） */
-  --shadow-primary: 0 4px 16px rgba(102, 126, 234, 0.3);
-  --shadow-accent: 0 4px 16px rgba(240, 147, 251, 0.3);
+  /* Colored Shadows - 彩色陰影（用於強調） */
+  --shadow-primary: 0 8px 32px rgba(102, 126, 234, 0.35);
+  --shadow-accent: 0 8px 32px rgba(240, 147, 251, 0.35);
+  --shadow-warm: 0 8px 32px rgba(250, 112, 154, 0.35);
+  --shadow-cool: 0 8px 32px rgba(79, 172, 254, 0.35);
+
+  /* Glow Effects - 發光效果 */
+  --glow-primary: 0 0 20px rgba(102, 126, 234, 0.5);
+  --glow-accent: 0 0 20px rgba(240, 147, 251, 0.5);
 
   /* ========================================
      Transitions - 過場效果
