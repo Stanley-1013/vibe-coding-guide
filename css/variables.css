@@ -1,172 +1,209 @@
 /**
- * CSS 設計系統 - 變數定義
+ * CSS 設計系統 - 專業配色方案
  *
- * 此檔案定義整個網站的設計變數，包含：
- * - 顏色系統（Color Palette）
- * - 字型系統（Typography）
- * - 間距系統（Spacing）
- * - 圓角與陰影（Border Radius & Shadows）
- * - 過場效果（Transitions）
+ * 參考：Docusaurus, VitePress, Material Design
+ * 設計原則：清晰、專業、現代、易讀
  */
 
 :root {
   /* ========================================
-     Colors - 現代化多彩漸層配色
+     Colors - 專業配色系統
      ======================================== */
 
-  /* Primary Gradients - 主要漸層色 */
-  --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-  --gradient-accent: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-  --gradient-warm: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
-  --gradient-cool: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
-  --gradient-hero: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  /* Primary - 深藍紫色（專業感） */
+  --color-primary: #5468ff;
+  --color-primary-dark: #3b4cc0;
+  --color-primary-light: #7583ff;
+  --color-primary-lighter: #e8eaff;
 
-  /* Solid Colors - 純色（用於文字等） */
-  --color-primary: #667eea;
-  --color-secondary: #764ba2;
-  --color-accent: #f093fb;
-  --color-blue: #4facfe;
-  --color-pink: #fa709a;
-  --color-yellow: #fee140;
+  /* Secondary - 紫色（創新感） */
+  --color-secondary: #8b5cf6;
+  --color-secondary-dark: #7c3aed;
+  --color-secondary-light: #a78bfa;
 
-  /* Text Colors - 文字顏色 */
-  --color-text: #1a202c;          /* 更深的主文字色 */
-  --color-text-light: #4a5568;    /* 中度灰色次要文字 */
-  --color-text-muted: #a0aec0;    /* 淺灰色靜態文字 */
+  /* Accent - 青色（現代感） */
+  --color-accent: #06b6d4;
+  --color-accent-dark: #0891b2;
+  --color-accent-light: #22d3ee;
 
-  /* Background Colors - 背景色 */
+  /* Success/Warning/Error */
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  --color-info: #3b82f6;
+
+  /* Grays - 精心調整的灰階 */
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+
+  /* Text Colors */
+  --color-text: var(--color-gray-900);
+  --color-text-secondary: var(--color-gray-600);
+  --color-text-tertiary: var(--color-gray-500);
+
+  /* Background Colors */
   --color-bg: #ffffff;
-  --color-bg-gradient: linear-gradient(180deg, #ffffff 0%, #f7fafc 100%);
-  --color-bg-dark: #1a202c;
-  --color-bg-glass: rgba(255, 255, 255, 0.7);
-  --color-bg-glass-dark: rgba(255, 255, 255, 0.1);
+  --color-bg-secondary: var(--color-gray-50);
+  --color-bg-tertiary: var(--color-gray-100);
 
-  /* Border Colors - 邊框顏色 */
-  --color-border: rgba(226, 232, 240, 0.8);
-  --color-border-light: rgba(237, 242, 247, 0.6);
+  /* Border Colors */
+  --color-border: var(--color-gray-200);
+  --color-border-light: var(--color-gray-100);
+  --color-border-dark: var(--color-gray-300);
 
-  /* Glassmorphism */
-  --glass-bg: rgba(255, 255, 255, 0.75);
-  --glass-border: rgba(255, 255, 255, 0.18);
-  --glass-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
-
-  /* Semantic Colors - 語義化顏色 */
-  --color-success: #48bb78;
-  --color-warning: #f6ad55;
-  --color-error: #f56565;
-  --color-info: #4299e1;
+  /* Gradients - 現代化漸層 */
+  --gradient-primary: linear-gradient(135deg, #5468ff 0%, #8b5cf6 100%);
+  --gradient-accent: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+  --gradient-warm: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
+  --gradient-hero: linear-gradient(135deg, #5468ff 0%, #8b5cf6 50%, #06b6d4 100%);
 
   /* ========================================
      Typography - 字型系統
      ======================================== */
 
   /* Font Families */
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-               'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
-  --font-mono: 'Fira Code', 'Monaco', 'Consolas', 'Courier New', monospace;
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans',
+               Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+  --font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Monaco, Consolas,
+               'Liberation Mono', 'Courier New', monospace;
 
-  /* Font Sizes - 更大膽的字體層次 */
-  --font-size-xs: 0.75rem;        /* 12px */
-  --font-size-sm: 0.875rem;       /* 14px */
-  --font-size-base: 1rem;         /* 16px */
-  --font-size-lg: 1.125rem;       /* 18px */
-  --font-size-xl: 1.25rem;        /* 20px */
-  --font-size-2xl: 1.5rem;        /* 24px */
-  --font-size-3xl: 2rem;          /* 32px */
-  --font-size-4xl: 2.75rem;       /* 44px */
-  --font-size-5xl: 3.5rem;        /* 56px */
-  --font-size-6xl: 4.5rem;        /* 72px */
+  /* Font Sizes - 更清晰的字體階層 */
+  --font-size-xs: 0.75rem;      /* 12px */
+  --font-size-sm: 0.875rem;     /* 14px */
+  --font-size-base: 1rem;       /* 16px */
+  --font-size-lg: 1.125rem;     /* 18px */
+  --font-size-xl: 1.25rem;      /* 20px */
+  --font-size-2xl: 1.5rem;      /* 24px */
+  --font-size-3xl: 1.875rem;    /* 30px */
+  --font-size-4xl: 2.25rem;     /* 36px */
+  --font-size-5xl: 3rem;        /* 48px */
+  --font-size-6xl: 3.75rem;     /* 60px */
 
   /* Line Heights */
+  --line-height-none: 1;
   --line-height-tight: 1.25;
-  --line-height-base: 1.5;
-  --line-height-relaxed: 1.75;
+  --line-height-snug: 1.375;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.625;
+  --line-height-loose: 2;
 
   /* Font Weights */
   --font-weight-normal: 400;
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+
+  /* Letter Spacing */
+  --letter-spacing-tighter: -0.05em;
+  --letter-spacing-tight: -0.025em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.025em;
+  --letter-spacing-wider: 0.05em;
 
   /* ========================================
-     Spacing - 間距系統（基於 8px grid）
+     Spacing - 8px 基準網格系統
      ======================================== */
 
-  --space-xs: 0.5rem;     /* 8px */
-  --space-sm: 1rem;       /* 16px */
-  --space-md: 2rem;       /* 32px */
-  --space-lg: 4rem;       /* 64px */
-  --space-xl: 6rem;       /* 96px */
-  --space-2xl: 8rem;      /* 128px */
+  --space-0: 0;
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-5: 1.25rem;   /* 20px */
+  --space-6: 1.5rem;    /* 24px */
+  --space-8: 2rem;      /* 32px */
+  --space-10: 2.5rem;   /* 40px */
+  --space-12: 3rem;     /* 48px */
+  --space-16: 4rem;     /* 64px */
+  --space-20: 5rem;     /* 80px */
+  --space-24: 6rem;     /* 96px */
+  --space-32: 8rem;     /* 128px */
 
   /* ========================================
      Border Radius - 圓角
      ======================================== */
 
-  --radius-sm: 0.5rem;    /* 8px */
-  --radius-md: 1rem;      /* 16px */
-  --radius-lg: 2rem;      /* 32px */
-  --radius-full: 9999px;  /* 完全圓角 */
+  --radius-none: 0;
+  --radius-sm: 0.375rem;    /* 6px */
+  --radius-base: 0.5rem;    /* 8px */
+  --radius-md: 0.75rem;     /* 12px */
+  --radius-lg: 1rem;        /* 16px */
+  --radius-xl: 1.5rem;      /* 24px */
+  --radius-2xl: 2rem;       /* 32px */
+  --radius-full: 9999px;
 
   /* ========================================
-     Shadows - 增強陰影效果
+     Shadows - 層次感陰影
      ======================================== */
 
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
-  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
-  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.16);
-  --shadow-xl: 0 16px 64px rgba(0, 0, 0, 0.2);
-  --shadow-2xl: 0 24px 96px rgba(0, 0, 0, 0.25);
+  --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  --shadow-base: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  --shadow-2xl: 0 35px 60px -15px rgba(0, 0, 0, 0.3);
 
-  /* Colored Shadows - 彩色陰影（用於強調） */
-  --shadow-primary: 0 8px 32px rgba(102, 126, 234, 0.35);
-  --shadow-accent: 0 8px 32px rgba(240, 147, 251, 0.35);
-  --shadow-warm: 0 8px 32px rgba(250, 112, 154, 0.35);
-  --shadow-cool: 0 8px 32px rgba(79, 172, 254, 0.35);
+  /* Colored Shadows */
+  --shadow-primary: 0 10px 40px -10px rgba(84, 104, 255, 0.4);
+  --shadow-accent: 0 10px 40px -10px rgba(6, 182, 212, 0.4);
 
-  /* Glow Effects - 發光效果 */
-  --glow-primary: 0 0 20px rgba(102, 126, 234, 0.5);
-  --glow-accent: 0 0 20px rgba(240, 147, 251, 0.5);
+  /* Inner Shadow */
+  --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.05);
 
   /* ========================================
-     Transitions - 過場效果
+     Transitions - 過渡效果
      ======================================== */
 
-  --transition-fast: 0.15s ease;
-  --transition-base: 0.3s ease;
-  --transition-slow: 0.5s ease;
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
 
-  /* Easing Functions - 緩動函數 */
-  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
-  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  /* Easing Functions */
   --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
 
   /* ========================================
      Z-Index - 層級管理
      ======================================== */
 
-  --z-dropdown: 100;
-  --z-sticky: 200;
-  --z-fixed: 300;
-  --z-modal: 400;
-  --z-tooltip: 500;
+  --z-0: 0;
+  --z-10: 10;
+  --z-20: 20;
+  --z-30: 30;
+  --z-40: 40;
+  --z-50: 50;
+  --z-sticky: 100;
+  --z-dropdown: 200;
+  --z-modal: 300;
+  --z-tooltip: 400;
 
   /* ========================================
-     Container - 容器最大寬度
+     Container - 容器寬度
      ======================================== */
 
   --container-sm: 640px;
   --container-md: 768px;
   --container-lg: 1024px;
   --container-xl: 1280px;
+  --container-2xl: 1536px;
 }
 
 /**
- * Dark Mode Support (未來可擴展)
+ * Dark Mode Support (未來擴展)
  */
 @media (prefers-color-scheme: dark) {
   :root {
-    /* 未來可在此定義深色模式變數 */
+    /* 深色模式變數將在這裡定義 */
   }
 }

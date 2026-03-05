@@ -1,13 +1,15 @@
 /**
- * Base Styles - 基礎樣式
+ * Base Styles - 專業基礎樣式
  *
- * 包含 CSS Reset、基礎排版、通用元素樣式
+ * 參考：Docusaurus, VitePress設計原則
  */
 
 /* ========================================
    CSS Reset
    ======================================== */
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -15,110 +17,177 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 /* ========================================
-   Base Typography - 基礎排版
+   Body - 基礎設置
    ======================================== */
 body {
   font-family: var(--font-sans);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
   color: var(--color-text);
-  background: linear-gradient(135deg, #f5f7fa 0%, #e3e8f0 100%);
-  background-attachment: fixed;
-  line-height: var(--line-height-base);
-  font-size: 16px;
+  background: var(--color-bg);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
   min-height: 100vh;
 }
 
+/* ========================================
+   Typography - 專業排版
+   ======================================== */
+
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
-  font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-bold);
   line-height: var(--line-height-tight);
-  margin-bottom: var(--space-sm);
+  letter-spacing: var(--letter-spacing-tight);
   color: var(--color-text);
+  margin-bottom: var(--space-4);
 }
 
 h1 {
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  font-weight: var(--font-weight-bold);
-  background: var(--gradient-hero);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  font-size: clamp(2.25rem, 5vw + 1rem, 3.75rem);
+  font-weight: var(--font-weight-extrabold);
+  letter-spacing: var(--letter-spacing-tighter);
+  line-height: var(--line-height-none);
+  margin-bottom: var(--space-6);
 }
 
 h2 {
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: var(--font-weight-bold);
+  font-size: clamp(1.875rem, 4vw + 0.5rem, 3rem);
+  margin-bottom: var(--space-6);
 }
 
 h3 {
-  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  margin-bottom: var(--space-4);
 }
 
 h4 {
-  font-size: 1.25rem;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
 }
 
 h5 {
-  font-size: 1.125rem;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
 }
 
 h6 {
-  font-size: 1rem;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
 }
 
 /* Paragraphs */
 p {
-  margin-bottom: var(--space-sm);
+  margin-bottom: var(--space-4);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-secondary);
   max-width: 65ch;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+/* Strong & Em */
+strong, b {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+}
+
+em, i {
+  font-style: italic;
 }
 
 /* Lists */
 ul, ol {
-  margin-left: var(--space-md);
-  margin-bottom: var(--space-sm);
+  margin-left: var(--space-6);
+  margin-bottom: var(--space-4);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-secondary);
 }
 
 li {
-  margin-bottom: 0.5rem;
+  margin-bottom: var(--space-2);
+}
+
+li:last-child {
+  margin-bottom: 0;
+}
+
+ul ul, ol ol, ul ol, ol ul {
+  margin-top: var(--space-2);
+  margin-bottom: 0;
 }
 
 /* Links */
 a {
   color: var(--color-primary);
   text-decoration: none;
-  transition: color var(--transition-base);
+  transition: color var(--transition-fast);
+  font-weight: var(--font-weight-medium);
 }
 
 a:hover {
-  color: var(--color-secondary);
+  color: var(--color-primary-dark);
+  text-decoration: underline;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
 }
 
 /* Code */
 code {
   font-family: var(--font-mono);
-  background: var(--color-bg-light);
+  font-size: 0.875em;
+  background: var(--color-gray-100);
+  color: var(--color-gray-800);
   padding: 0.2em 0.4em;
   border-radius: var(--radius-sm);
-  font-size: 0.9em;
-  color: var(--color-text);
+  font-weight: var(--font-weight-medium);
 }
 
 pre {
-  background: var(--color-bg-light);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  padding: var(--space-sm);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-relaxed);
+  background: var(--color-gray-900);
+  color: var(--color-gray-100);
+  padding: var(--space-4);
+  border-radius: var(--radius-lg);
   overflow-x: auto;
-  margin-bottom: var(--space-sm);
+  margin-bottom: var(--space-4);
 }
 
 pre code {
   background: none;
+  color: inherit;
   padding: 0;
+  font-size: inherit;
+}
+
+/* Blockquote */
+blockquote {
+  border-left: 4px solid var(--color-primary);
+  padding-left: var(--space-4);
+  margin: var(--space-6) 0;
+  font-style: italic;
+  color: var(--color-text-secondary);
+}
+
+/* Horizontal Rule */
+hr {
+  border: none;
+  height: 1px;
+  background: var(--color-border);
+  margin: var(--space-8) 0;
 }
 
 /* Images */
@@ -126,39 +195,38 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
-}
-
-/* Horizontal Rule */
-hr {
-  border: none;
-  border-top: 1px solid var(--color-border);
-  margin: var(--space-md) 0;
+  border-radius: var(--radius-md);
 }
 
 /* ========================================
-   Container - 容器
+   Containers - 響應式容器
    ======================================== */
 .container {
-  max-width: 1200px;
+  width: 100%;
+  max-width: var(--container-xl);
   margin: 0 auto;
-  padding: 0 var(--space-md);
+  padding: 0 var(--space-6);
 }
 
 .container-narrow {
-  max-width: 800px;
+  width: 100%;
+  max-width: var(--container-md);
   margin: 0 auto;
-  padding: 0 var(--space-md);
+  padding: 0 var(--space-6);
 }
 
 .container-wide {
-  max-width: 1400px;
+  width: 100%;
+  max-width: var(--container-2xl);
   margin: 0 auto;
-  padding: 0 var(--space-md);
+  padding: 0 var(--space-6);
 }
 
 /* ========================================
-   Utility Classes - 工具類
+   Utility Classes - 工具類別
    ======================================== */
+
+/* Text Alignment */
 .text-center {
   text-align: center;
 }
@@ -171,6 +239,20 @@ hr {
   text-align: right;
 }
 
+/* Text Colors */
+.text-primary {
+  color: var(--color-primary);
+}
+
+.text-secondary {
+  color: var(--color-text-secondary);
+}
+
+.text-tertiary {
+  color: var(--color-text-tertiary);
+}
+
+/* Screen Reader Only */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -181,4 +263,21 @@ hr {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0;
+}
+
+/* Focus Visible */
+*:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Selection */
+::selection {
+  background: var(--color-primary-lighter);
+  color: var(--color-primary-dark);
+}
+
+::-moz-selection {
+  background: var(--color-primary-lighter);
+  color: var(--color-primary-dark);
 }

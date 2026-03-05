@@ -1,22 +1,22 @@
 /**
- * Layout Styles - 版面配置
+ * Layout Styles - 專業版面設計
  *
- * 包含導覽列、Hero、Section、Footer 的版面結構
+ * 參考：Docusaurus, VitePress, Tailwind UI
  */
 
 /* ========================================
-   Navigation - 導覽列
+   Navigation - 專業導航欄
    ======================================== */
 nav {
   position: sticky;
   top: 0;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(226, 232, 240, 0.6);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-border-light);
+  box-shadow: var(--shadow-xs);
   z-index: var(--z-sticky);
-  padding: 1rem 0;
+  padding: var(--space-4) 0;
   transition: all var(--transition-base);
 }
 
@@ -27,51 +27,68 @@ nav .container {
 }
 
 nav .logo {
-  font-weight: var(--font-weight-bold);
-  font-size: 1.35rem;
-  background: var(--gradient-hero);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  letter-spacing: -0.03em;
-  text-shadow: 0 2px 10px rgba(102, 126, 234, 0.2);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-extrabold);
+  color: var(--color-text);
+  letter-spacing: var(--letter-spacing-tight);
+  transition: color var(--transition-fast);
+}
+
+nav .logo:hover {
+  color: var(--color-primary);
+  text-decoration: none;
 }
 
 nav ul {
   display: flex;
-  gap: var(--space-md);
+  align-items: center;
+  gap: var(--space-2);
   list-style: none;
   margin: 0;
 }
 
 nav a {
-  text-decoration: none;
-  color: var(--color-text);
+  display: block;
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--font-size-base);
   font-weight: var(--font-weight-medium);
-  transition: color var(--transition-base);
-  padding: 0.5rem 0.75rem;
-  border-radius: var(--radius-sm);
+  color: var(--color-text-secondary);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+  text-decoration: none;
 }
 
 nav a:hover {
   color: var(--color-primary);
-  background: var(--color-bg-light);
+  background: var(--color-gray-50);
+  text-decoration: none;
+}
+
+nav a.active {
+  color: var(--color-primary);
+  background: var(--color-primary-lighter);
 }
 
 /* Hamburger Menu (mobile) */
 .hamburger {
   display: none;
   flex-direction: column;
-  gap: 4px;
+  gap: 5px;
   cursor: pointer;
-  padding: 0.5rem;
+  padding: var(--space-2);
+  border-radius: var(--radius-md);
+  transition: background var(--transition-fast);
+}
+
+.hamburger:hover {
+  background: var(--color-gray-100);
 }
 
 .hamburger span {
   width: 24px;
-  height: 3px;
+  height: 2px;
   background: var(--color-text);
-  border-radius: 2px;
+  border-radius: var(--radius-full);
   transition: all var(--transition-base);
 }
 
@@ -88,16 +105,16 @@ nav a:hover {
 }
 
 /* ========================================
-   Hero Section - 首頁主視覺
+   Hero Section - 專業首頁
    ======================================== */
 #hero {
-  min-height: 60vh;
+  min-height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: white;
-  padding: var(--space-xl) 0;
+  background: linear-gradient(180deg, #ffffff 0%, var(--color-gray-50) 100%);
+  padding: var(--space-24) 0 var(--space-16);
   position: relative;
 }
 
@@ -107,34 +124,36 @@ nav a:hover {
 }
 
 #hero h1 {
-  font-size: clamp(2.5rem, 6vw, 4.5rem);
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-6);
   background: var(--gradient-hero);
   -webkit-background-clip: text;
-  background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-weight: 800;
-  line-height: 1.2;
-  letter-spacing: -0.03em;
+  background-clip: text;
   animation: fadeInUp 0.8s ease-out;
 }
 
 #hero .subtitle {
-  font-size: clamp(1.125rem, 2vw, 1.5rem);
-  color: var(--color-text);
-  margin-bottom: var(--space-lg);
+  font-size: var(--font-size-xl);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-8);
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
   line-height: var(--line-height-relaxed);
-  font-weight: var(--font-weight-medium);
   animation: fadeInUp 0.8s ease-out 0.2s backwards;
 }
 
 #hero .btn {
   animation: fadeInUp 0.8s ease-out 0.4s backwards;
-  font-size: 1.25rem;
-  padding: 1.25rem 3rem;
+  font-size: var(--font-size-lg);
+  padding: var(--space-4) var(--space-8);
+}
+
+#hero img {
+  max-width: 360px;
+  margin: 0 auto var(--space-8);
+  opacity: 0.9;
+  animation: float 6s ease-in-out infinite;
 }
 
 @keyframes fadeInUp {
@@ -148,25 +167,35 @@ nav a:hover {
   }
 }
 
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
 /* ========================================
    Sections - 內容區塊
    ======================================== */
 section {
-  padding: var(--space-xl) 0;
+  padding: var(--space-20) 0;
   position: relative;
-  background: white;
 }
 
 section:nth-child(even) {
-  background: #f7fafc;
+  background: var(--color-bg-secondary);
 }
 
 section h2 {
   text-align: center;
-  margin-bottom: var(--space-lg);
-  font-size: 2.5rem;
+  margin-bottom: var(--space-4);
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-extrabold);
+  letter-spacing: var(--letter-spacing-tight);
   position: relative;
-  padding-bottom: var(--space-sm);
+  padding-bottom: var(--space-6);
 }
 
 section h2::after {
@@ -175,62 +204,145 @@ section h2::after {
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 60px;
+  width: 80px;
   height: 4px;
-  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  background: var(--gradient-primary);
   border-radius: var(--radius-full);
 }
 
-section h3 {
-  margin-bottom: var(--space-sm);
-  color: var(--color-text);
-}
-
-section p {
-  color: var(--color-text-light);
-  line-height: var(--line-height-relaxed);
-}
-
-/* Grid Layouts */
-.grid {
-  display: grid;
-  gap: var(--space-md);
-}
-
-.grid-2 {
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.grid-3 {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.grid-4 {
-  grid-template-columns: repeat(4, 1fr);
+section > .container > p,
+section > .container-narrow > p {
+  text-align: center;
+  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-12);
+  max-width: 100%;
 }
 
 /* ========================================
    Footer - 頁尾
    ======================================== */
 footer {
-  background: var(--color-text);
-  color: white;
+  background: var(--color-gray-900);
+  color: var(--color-gray-300);
+  padding: var(--space-12) 0;
   text-align: center;
-  padding: var(--space-lg) 0;
-  margin-top: var(--space-xl);
+  font-size: var(--font-size-sm);
+  border-top: 1px solid var(--color-gray-800);
 }
 
 footer p {
   margin: 0;
-  max-width: none;
-  opacity: 0.8;
+  max-width: 100%;
 }
 
 footer a {
-  color: var(--color-accent);
-  font-weight: var(--font-weight-medium);
+  color: var(--color-gray-100);
+  text-decoration: none;
+  font-weight: var(--font-weight-semibold);
 }
 
 footer a:hover {
-  color: white;
+  color: var(--color-primary-light);
+}
+
+/* ========================================
+   Grid Layouts - 網格布局
+   ======================================== */
+.grid {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.grid-2 {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.grid-3 {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* ========================================
+   Responsive Design - 響應式設計
+   ======================================== */
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    box-shadow: var(--shadow-md);
+    flex-direction: column;
+    padding: var(--space-4) 0;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  nav a {
+    width: 100%;
+    padding: var(--space-3) var(--space-6);
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  #hero {
+    min-height: 60vh;
+    padding: var(--space-16) 0 var(--space-12);
+  }
+
+  #hero img {
+    max-width: 280px;
+  }
+
+  section {
+    padding: var(--space-16) 0;
+  }
+
+  section h2 {
+    font-size: var(--font-size-3xl);
+  }
+
+  .grid-2,
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .container,
+  .container-narrow {
+    padding: 0 var(--space-4);
+  }
+
+  #hero {
+    padding: var(--space-12) 0 var(--space-8);
+  }
+
+  section {
+    padding: var(--space-12) 0;
+  }
+
+  section h2 {
+    font-size: var(--font-size-2xl);
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .prompt-card .actions {
+    flex-direction: column;
+  }
+
+  .prompt-card .actions .btn {
+    width: 100%;
+  }
 }

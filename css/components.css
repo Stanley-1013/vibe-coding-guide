@@ -1,88 +1,83 @@
 /**
- * Component Styles - 元件樣式（完全重構版）
+ * Component Styles - 專業元件設計
  *
- * 採用現代化設計：Glassmorphism + 懸浮效果 + 微互動
+ * 參考：Tailwind UI, Material Design, Docusaurus
  */
 
 /* ========================================
    Buttons - 現代化按鈕
    ======================================== */
 .btn {
-  display: inline-block;
-  padding: 1rem 2.5rem;
-  background: var(--gradient-primary);
-  color: white;
-  text-decoration: none;
-  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-6);
+  font-size: var(--font-size-base);
   font-weight: var(--font-weight-semibold);
-  font-size: 1.125rem;
-  transition: all var(--transition-base);
+  line-height: 1;
+  color: #ffffff;
+  background: var(--gradient-primary);
   border: none;
+  border-radius: var(--radius-lg);
   cursor: pointer;
-  box-shadow: var(--shadow-primary);
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.btn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-  transition: left 0.5s;
-}
-
-.btn:hover::before {
-  left: 100%;
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-sm);
+  text-decoration: none;
+  white-space: nowrap;
 }
 
 .btn:hover {
-  transform: translateY(-4px) scale(1.02);
-  box-shadow: var(--shadow-xl), var(--glow-primary);
-  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-primary);
+  text-decoration: none;
+  color: #ffffff;
 }
 
 .btn:active {
-  transform: translateY(-2px) scale(1);
+  transform: translateY(0);
 }
 
+.btn:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Button Variants */
 .btn-secondary {
-  background: var(--glass-bg);
+  background: #ffffff;
   color: var(--color-primary);
-  border: 2px solid rgba(102, 126, 234, 0.3);
-  box-shadow: var(--glass-shadow);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  border: 2px solid var(--color-border);
+  box-shadow: var(--shadow-xs);
 }
 
 .btn-secondary:hover {
-  background: var(--gradient-primary);
-  color: white;
-  border-color: transparent;
-  box-shadow: var(--shadow-primary), var(--glow-primary);
+  background: var(--color-gray-50);
+  border-color: var(--color-primary);
+  color: var(--color-primary-dark);
+  box-shadow: var(--shadow-sm);
 }
 
 .btn-small {
-  padding: 0.625rem 1.5rem;
-  font-size: 0.95rem;
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--font-size-sm);
+}
+
+.btn-large {
+  padding: var(--space-4) var(--space-8);
+  font-size: var(--font-size-lg);
 }
 
 /* ========================================
-   Card - Glassmorphism 卡片
+   Cards - 專業卡片設計
    ======================================== */
 .card {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-radius: var(--radius-lg);
-  padding: var(--space-md);
-  box-shadow: var(--glass-shadow);
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
   transition: all var(--transition-base);
+  box-shadow: var(--shadow-xs);
   position: relative;
   overflow: hidden;
 }
@@ -91,101 +86,117 @@
   content: '';
   position: absolute;
   top: 0;
-  left: -100%;
-  width: 100%;
-  height: 2px;
+  left: 0;
+  right: 0;
+  height: 4px;
   background: var(--gradient-primary);
-  transition: left 0.5s;
-}
-
-.card:hover::before {
-  left: 100%;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition-base);
 }
 
 .card:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-lg), 0 0 40px rgba(102, 126, 234, 0.2);
-  border-color: rgba(102, 126, 234, 0.3);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-gray-300);
+}
+
+.card:hover::before {
+  transform: scaleX(1);
 }
 
 .card-icon {
-  width: 60px;
-  height: 60px;
-  margin-bottom: var(--space-sm);
-  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+  width: 48px;
+  height: 48px;
+  margin-bottom: var(--space-4);
+  color: var(--color-primary);
 }
 
 .card h3 {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  margin-bottom: var(--space-3);
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  margin-bottom: var(--space-sm);
-  font-size: 1.5rem;
+  gap: var(--space-2);
 }
 
 .card p {
-  color: var(--color-text-light);
-  margin-bottom: var(--space-sm);
-  line-height: 1.7;
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-4);
   max-width: 100%;
 }
 
 /* ========================================
-   Prompt Card - 可複製 Prompt 卡片
+   Prompt Card - 可複製提示卡片
    ======================================== */
 .prompt-card {
-  background: rgba(102, 126, 234, 0.05);
+  background: var(--color-gray-50);
+  border: 1px solid var(--color-border-light);
   border-left: 4px solid var(--color-primary);
   border-radius: var(--radius-md);
-  padding: var(--space-sm);
-  margin-top: var(--space-sm);
+  padding: var(--space-4);
+  margin-top: var(--space-4);
   font-family: var(--font-mono);
-  font-size: 0.9rem;
-  line-height: 1.6;
-  position: relative;
-  backdrop-filter: blur(5px);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-relaxed);
 }
 
 .prompt-card div:not(.actions) {
-  margin-bottom: 0.5rem;
-  color: var(--color-text);
+  color: var(--color-gray-700);
+  margin-bottom: var(--space-2);
+}
+
+.prompt-card div:last-of-type:not(.actions) {
+  margin-bottom: 0;
 }
 
 .prompt-card .actions {
   display: flex;
-  gap: 0.75rem;
-  margin-top: var(--space-sm);
   flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border-light);
 }
 
 /* ========================================
-   Details & Summary - 展開元件
+   Details & Summary - 摺疊元件
    ======================================== */
 details {
-  margin-top: var(--space-sm);
+  margin-top: var(--space-4);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   overflow: hidden;
-  background: rgba(255, 255, 255, 0.4);
-  backdrop-filter: blur(5px);
+  background: #ffffff;
 }
 
 summary {
-  cursor: pointer;
-  padding: var(--space-sm);
+  padding: var(--space-4);
   font-weight: var(--font-weight-semibold);
   color: var(--color-primary);
-  transition: all var(--transition-base);
+  cursor: pointer;
   user-select: none;
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: var(--space-2);
+  transition: all var(--transition-fast);
+}
+
+summary::-webkit-details-marker {
+  display: none;
 }
 
 summary::before {
-  content: '▶';
-  font-size: 0.75em;
-  transition: transform var(--transition-base);
+  content: '›';
+  font-size: 1.5em;
+  font-weight: bold;
+  transition: transform var(--transition-fast);
+  color: var(--color-primary);
 }
 
 details[open] summary::before {
@@ -193,61 +204,61 @@ details[open] summary::before {
 }
 
 summary:hover {
-  background: rgba(102, 126, 234, 0.1);
-  color: var(--color-secondary);
+  background: var(--color-gray-50);
 }
 
 details[open] summary {
   border-bottom: 1px solid var(--color-border);
-  margin-bottom: var(--space-sm);
+  margin-bottom: 0;
 }
 
 details > *:not(summary) {
-  padding: 0 var(--space-sm) var(--space-sm);
+  padding: var(--space-4);
 }
 
 /* ========================================
    Accordion - FAQ 手風琴
    ======================================== */
 .accordion-item {
-  background: var(--glass-bg);
-  backdrop-filter: blur(15px);
-  border-radius: var(--radius-md);
-  margin-bottom: var(--space-sm);
-  border: 1px solid var(--glass-border);
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-3);
   overflow: hidden;
   transition: all var(--transition-base);
 }
 
 .accordion-item:hover {
-  box-shadow: var(--shadow-md);
-  transform: translateX(4px);
+  border-color: var(--color-gray-300);
+  box-shadow: var(--shadow-sm);
 }
 
 .accordion-header {
-  padding: var(--space-sm) var(--space-md);
-  cursor: pointer;
+  padding: var(--space-4) var(--space-6);
   font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-lg);
   color: var(--color-text);
+  cursor: pointer;
+  user-select: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: all var(--transition-base);
-  user-select: none;
+  transition: all var(--transition-fast);
 }
 
 .accordion-header:hover {
-  background: rgba(102, 126, 234, 0.08);
+  background: var(--color-gray-50);
 }
 
 .accordion-header.active {
-  background: rgba(102, 126, 234, 0.12);
-  color: var(--color-primary);
+  background: var(--color-primary-lighter);
+  color: var(--color-primary-dark);
 }
 
 .accordion-icon {
+  font-size: 1.25em;
+  color: var(--color-primary);
   transition: transform var(--transition-base);
-  font-size: 1.2em;
 }
 
 .accordion-header.active .accordion-icon {
@@ -257,14 +268,18 @@ details > *:not(summary) {
 .accordion-content {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.4s ease, padding 0.4s ease;
-  padding: 0 var(--space-md);
-  background: rgba(255, 255, 255, 0.5);
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background: var(--color-gray-50);
 }
 
 .accordion-content.active {
-  max-height: 1000px;
-  padding: var(--space-sm) var(--space-md) var(--space-md);
+  max-height: 2000px;
+}
+
+.accordion-content-inner {
+  padding: var(--space-6);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
 }
 
 /* ========================================
@@ -272,20 +287,35 @@ details > *:not(summary) {
    ======================================== */
 .toast {
   position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  background: rgba(72, 187, 120, 0.95);
-  color: white;
-  padding: 1rem 1.5rem;
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-xl);
-  backdrop-filter: blur(10px);
+  bottom: var(--space-6);
+  right: var(--space-6);
+  background: #ffffff;
+  color: var(--color-text);
+  padding: var(--space-4) var(--space-6);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-lg);
   z-index: var(--z-tooltip);
   animation: slideInUp 0.3s ease, slideOutDown 0.3s ease 2.7s forwards;
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: var(--space-3);
   font-weight: var(--font-weight-medium);
+  min-width: 280px;
+}
+
+.toast::before {
+  content: '✓';
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-full);
+  background: var(--color-success);
+  color: #ffffff;
+  font-weight: var(--font-weight-bold);
+  flex-shrink: 0;
 }
 
 @keyframes slideInUp {
@@ -311,31 +341,52 @@ details > *:not(summary) {
 }
 
 /* ========================================
-   Copy Button - 複製按鈕
+   Badges - 標籤
+   ======================================== */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-1) var(--space-3);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1;
+  color: var(--color-primary-dark);
+  background: var(--color-primary-lighter);
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+}
+
+.badge-success {
+  color: #065f46;
+  background: #d1fae5;
+}
+
+.badge-warning {
+  color: #92400e;
+  background: #fef3c7;
+}
+
+.badge-error {
+  color: #991b1b;
+  background: #fee2e2;
+}
+
+/* ========================================
+   Copy Button - 複製按鈕特效
    ======================================== */
 .copy-btn {
   position: relative;
   overflow: hidden;
 }
 
-.copy-btn::after {
-  content: '✓ 已複製';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--gradient-accent);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity var(--transition-fast);
-  pointer-events: none;
+.copy-btn.copied {
+  background: var(--color-success);
+  color: #ffffff;
 }
 
 .copy-btn.copied::after {
-  opacity: 1;
+  content: '✓ 已複製';
 }
 
 /* ========================================
@@ -343,11 +394,8 @@ details > *:not(summary) {
    ======================================== */
 .stuck-btn {
   background: var(--gradient-warm);
-  color: white;
-  border: none;
 }
 
 .stuck-btn:hover {
-  box-shadow: var(--shadow-warm);
-  background: var(--gradient-warm);
+  box-shadow: var(--shadow-lg);
 }
