@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,6 +16,7 @@
   <link rel="stylesheet" href="./css/animations.css">
   <link rel="stylesheet" href="./css/responsive.css">
 </head>
+
 <body>
   <!-- Navigation -->
   <nav>
@@ -54,7 +56,7 @@
       <div class="card animate-on-scroll" style="margin-bottom: var(--space-md);">
         <img src="./assets/svg/tool-antigravity.svg" alt="Antigravity" class="card-icon">
         <h3>💡 Antigravity（入門體驗）</h3>
-        <p>我會先推薦 Antigravity，原因很簡單：它比較像有人幫你「拆步驟＋帶你做」，而不是只丟一段答案。</p>
+        <p>我會先推薦 Antigravity，原因很簡單：免費且強大的AI coding工具。它比較像有人幫你「拆步驟＋帶你做」，而不是只丟一段答案。我會推薦一開始只用這個應該就夠了。</p>
 
         <details style="margin-top: var(--space-sm);">
           <summary>展開了解如何使用</summary>
@@ -79,26 +81,30 @@
             <div>我是新手/我想降低風險。請先給我 5–10 個小步驟，每步只做一件事。</div>
             <div>請只帶我做第 1 步，並告訴我完成後應該看到什麼結果。</div>
             <div class="actions">
-              <button class="btn btn-secondary copy-btn" data-copy="我想做一個小功能/小作品：<一句話描述>&#10;我是新手/我想降低風險。請先給我 5–10 個小步驟，每步只做一件事。&#10;請只帶我做第 1 步，並告訴我完成後應該看到什麼結果。">📋 複製 Prompt</button>
+              <button class="btn btn-secondary copy-btn"
+                data-copy="我想做一個小功能/小作品：<一句話描述>&#10;我是新手/我想降低風險。請先給我 5–10 個小步驟，每步只做一件事。&#10;請只帶我做第 1 步，並告訴我完成後應該看到什麼結果。">📋
+                複製 Prompt</button>
             </div>
           </div>
 
-          <p style="margin-top: var(--space-sm); font-size: 0.9em; color: var(--color-text-light);"><strong>小技巧：</strong>每次只讓它做一步，確認跑得起來再往下，這樣出錯時才好追。</p>
+          <p style="margin-top: var(--space-sm); font-size: 0.9em; color: var(--color-text-light);">
+            <strong>小技巧：</strong>每次只讓它做一步，確認跑得起來再往下，這樣出錯時才好追。</p>
         </details>
       </div>
 
       <div class="card animate-on-scroll" style="margin-bottom: var(--space-md);">
         <img src="./assets/svg/tool-claude.svg" alt="Claude Code" class="card-icon">
         <h3>🚀 Claude Code（日常主力）</h3>
-        <p>我最常用 Claude Code（整合在 VS Code），因為它更像「在專案裡幫你一起改」：能沿著 repo 結構走，比較適合做重構、補測試、修 bug、補文件。</p>
+        <p>我最常用 Claude Code（整合在 Antigravity、VS Code，須付費），因為我實際使用下來覺得它寫程式最強，缺點只有貴。它比較像「在專案裡幫你一起改」：能沿著 repo
+          結構走，比較適合做重構、補測試、修 bug、補文件 (Antigravity也可以)。</p>
 
         <details style="margin-top: var(--space-sm);">
           <summary>展開了解如何使用</summary>
 
           <p style="margin-top: var(--space-sm);"><strong>🎯 如何開始：</strong></p>
           <ol>
-            <li>在 VS Code 安裝「Claude Code」擴充套件</li>
-            <li>登入後，用 <code>Cmd/Ctrl + Shift + P</code> 開啟命令面板</li>
+            <li>在 Antigravity 或 VS Code 安裝「Claude Code for VS Code」擴充套件</li>
+            <li>登入後，上排會出現一個橘色claude icon，點擊它就能使用，或用 <code>Cmd/Ctrl + Shift + P</code> 開啟命令面板</li>
             <li>選擇「Claude Code: Open Chat」開始對話</li>
             <li>在專案資料夾中使用，它會自動讀取你的檔案結構</li>
           </ol>
@@ -115,11 +121,14 @@
             <div>我確認後你再從第 1 步開始，且每一步都要能跑得起來。</div>
             <div>如果出錯，我會貼錯誤訊息給你，你再針對錯誤修。</div>
             <div class="actions">
-              <button class="btn btn-secondary copy-btn" data-copy="先不要一次改很多。請先列出你的修改計畫（要改哪些檔案、每步做什麼）。&#10;我確認後你再從第 1 步開始，且每一步都要能跑得起來。&#10;如果出錯，我會貼錯誤訊息給你，你再針對錯誤修。">📋 複製 Prompt</button>
+              <button class="btn btn-secondary copy-btn"
+                data-copy="先不要一次改很多。請先列出你的修改計畫（要改哪些檔案、每步做什麼）。&#10;我確認後你再從第 1 步開始，且每一步都要能跑得起來。&#10;如果出錯，我會貼錯誤訊息給你，你再針對錯誤修。">📋
+                複製 Prompt</button>
             </div>
           </div>
 
-          <p style="margin-top: var(--space-sm); font-size: 0.9em; color: var(--color-text-light);"><strong>小技巧：</strong>在對話中可以用 <code>@檔案名稱</code> 讓它看特定檔案，用 <code>@folder</code> 讓它看整個資料夾。</p>
+          <p style="margin-top: var(--space-sm); font-size: 0.9em; color: var(--color-text-light);">
+            <strong>小技巧：</strong>在對話中可以用 <code>@檔案名稱</code> 讓它看特定檔案，用 <code>@folder</code> 讓它看整個資料夾。</p>
         </details>
       </div>
 
@@ -156,7 +165,9 @@
           <div>請幫我寫一頁「最小需求文件」，包含 Goal / User flow / Scope（含不做清單）/ Acceptance（可驗收條件）。</div>
           <div>請用白話，避免術語。</div>
           <div class="actions">
-            <button class="btn btn-secondary copy-btn" data-copy="我想做：<一句話>&#10;請幫我寫一頁「最小需求文件」，包含 Goal / User flow / Scope（含不做清單）/ Acceptance（可驗收條件）。&#10;請用白話，避免術語。">📋 複製 Prompt</button>
+            <button class="btn btn-secondary copy-btn"
+              data-copy="我想做：<一句話>&#10;請幫我寫一頁「最小需求文件」，包含 Goal / User flow / Scope（含不做清單）/ Acceptance（可驗收條件）。&#10;請用白話，避免術語。">📋
+              複製 Prompt</button>
             <button class="btn btn-secondary stuck-btn" data-target="faq">❓ 卡住了</button>
           </div>
         </div>
@@ -199,7 +210,8 @@
           </ul>
 
           <p style="margin-top: var(--space-sm);"><strong>✨ 實際案例：做一個待辦事項 App</strong></p>
-          <div style="background: var(--color-gray-50); padding: var(--space-sm); border-radius: var(--radius-md); margin-top: var(--space-xs);">
+          <div
+            style="background: var(--color-gray-50); padding: var(--space-sm); border-radius: var(--radius-md); margin-top: var(--space-xs);">
             <p style="margin: 0;"><strong>Goal：</strong>一個簡單的待辦清單，能新增、刪除、標記完成</p>
             <p style="margin: var(--space-xs) 0 0;"><strong>User flow：</strong></p>
             <ol style="margin: var(--space-xs) 0 0;">
@@ -209,10 +221,12 @@
               <li>點 X → 刪除待辦</li>
             </ol>
             <p style="margin: var(--space-xs) 0 0;"><strong>Scope：</strong>只做單頁面，不做登入、不做資料庫、不做分類</p>
-            <p style="margin: var(--space-xs) 0 0;"><strong>Acceptance：</strong>能新增、刪除、標記完成，重新整理後資料還在（用 localStorage）</p>
+            <p style="margin: var(--space-xs) 0 0;"><strong>Acceptance：</strong>能新增、刪除、標記完成，重新整理後資料還在（用 localStorage）
+            </p>
           </div>
 
-          <p style="margin-top: var(--space-sm); font-size: 0.9em; color: var(--color-text-light);"><strong>記住：</strong>文件不是一次寫完，而是在過程中逐步補充。從最小版本開始，遇到問題再回來補。</p>
+          <p style="margin-top: var(--space-sm); font-size: 0.9em; color: var(--color-text-light);">
+            <strong>記住：</strong>文件不是一次寫完，而是在過程中逐步補充。從最小版本開始，遇到問題再回來補。</p>
         </details>
       </div>
 
@@ -225,7 +239,8 @@
           <div>請先給計畫（3–6 步），再給第 1 步的最小 patch。</div>
           <div>我會跑起來驗證並回報結果，你再給下一步。</div>
           <div class="actions">
-            <button class="btn btn-secondary copy-btn" data-copy="請先給計畫（3–6 步），再給第 1 步的最小 patch。&#10;我會跑起來驗證並回報結果，你再給下一步。">📋 複製 Prompt</button>
+            <button class="btn btn-secondary copy-btn"
+              data-copy="請先給計畫（3–6 步），再給第 1 步的最小 patch。&#10;我會跑起來驗證並回報結果，你再給下一步。">📋 複製 Prompt</button>
             <button class="btn btn-secondary stuck-btn" data-target="faq">❓ 卡住了</button>
           </div>
         </div>
@@ -242,16 +257,19 @@
           </ol>
 
           <p style="margin-top: var(--space-sm);"><strong>⚠️ 反例：一次改太多會發生什麼？</strong></p>
-          <div style="background: #fee2e2; padding: var(--space-sm); border-radius: var(--radius-md); border-left: 4px solid #ef4444; margin-top: var(--space-xs);">
+          <div
+            style="background: #fee2e2; padding: var(--space-sm); border-radius: var(--radius-md); border-left: 4px solid #ef4444; margin-top: var(--space-xs);">
             <p style="margin: 0; color: var(--color-text);"><strong>壞習慣：</strong>「請幫我完成整個登入功能」</p>
             <p style="margin: var(--space-xs) 0 0; color: var(--color-text);">→ AI 一次給你改了 5 個檔案、新增 3 個功能</p>
             <p style="margin: var(--space-xs) 0 0; color: var(--color-text);">→ 跑起來出錯了，你不知道是哪一步出問題</p>
             <p style="margin: var(--space-xs) 0 0; color: var(--color-text);">→ 只能全部回頭重來，浪費時間</p>
           </div>
 
-          <div style="background: #d1fae5; padding: var(--space-sm); border-radius: var(--radius-md); border-left: 4px solid #10b981; margin-top: var(--space-sm);">
+          <div
+            style="background: #d1fae5; padding: var(--space-sm); border-radius: var(--radius-md); border-left: 4px solid #10b981; margin-top: var(--space-sm);">
             <p style="margin: 0; color: var(--color-text);"><strong>好習慣：</strong>「請先給計畫，再給第一步」</p>
-            <p style="margin: var(--space-xs) 0 0; color: var(--color-text);">→ AI 給計畫：1) 建 form 2) 加驗證 3) 串 API 4) 處理錯誤</p>
+            <p style="margin: var(--space-xs) 0 0; color: var(--color-text);">→ AI 給計畫：1) 建 form 2) 加驗證 3) 串 API 4) 處理錯誤
+            </p>
             <p style="margin: var(--space-xs) 0 0; color: var(--color-text);">→ 第一步：只改一個檔案，加一個 form</p>
             <p style="margin: var(--space-xs) 0 0; color: var(--color-text);">→ 跑起來，畫面出現了 ✓ → 繼續下一步</p>
             <p style="margin: var(--space-xs) 0 0; color: var(--color-text);">→ 出錯了也好追，只要檢查最後一步的改動</p>
@@ -264,7 +282,8 @@
             <li><strong>改動少於 3 個檔案</strong>：如果需要改很多檔案，可能這步太大了，再拆小一點</li>
           </ul>
 
-          <p style="margin-top: var(--space-sm); font-size: 0.9em; color: var(--color-text-light);"><strong>記住：</strong>小步快跑不是慢，而是穩。出錯時能快速定位問題，反而比一次改完快很多。</p>
+          <p style="margin-top: var(--space-sm); font-size: 0.9em; color: var(--color-text-light);">
+            <strong>記住：</strong>小步快跑不是慢，而是穩。出錯時能快速定位問題，反而比一次改完快很多。</p>
         </details>
       </div>
 
@@ -278,17 +297,21 @@
           <div>請列 3–5 個可能原因（按機率排序），每個原因給最小驗證步驟。</div>
           <div>等我回報驗證結果後，你再給最推薦修法。</div>
           <div class="actions">
-            <button class="btn btn-secondary copy-btn" data-copy="我遇到錯誤：<貼錯誤訊息>&#10;請列 3–5 個可能原因（按機率排序），每個原因給最小驗證步驟。&#10;等我回報驗證結果後，你再給最推薦修法。">📋 複製 Prompt</button>
+            <button class="btn btn-secondary copy-btn"
+              data-copy="我遇到錯誤：<貼錯誤訊息>&#10;請列 3–5 個可能原因（按機率排序），每個原因給最小驗證步驟。&#10;等我回報驗證結果後，你再給最推薦修法。">📋 複製
+              Prompt</button>
             <button class="btn btn-secondary stuck-btn" data-target="faq">❓ 卡住了</button>
           </div>
         </div>
 
         <details style="margin-top: var(--space-sm);">
           <summary>為什麼要「原因排序」而不是直接修？</summary>
-          <p style="margin-top: var(--space-sm);">因為直接問「怎麼修」，AI 只能猜最有可能的原因，如果猜錯你就浪費時間了。但如果先列出所有可能原因，你可以快速驗證找出真兇，再對症下藥。</p>
+          <p style="margin-top: var(--space-sm);">因為直接問「怎麼修」，AI 只能猜最有可能的原因，如果猜錯你就浪費時間了。但如果先列出所有可能原因，你可以快速驗證找出真兇，再對症下藥。
+          </p>
 
           <p style="margin-top: var(--space-sm);"><strong>✨ 實際案例：畫面顯示錯誤</strong></p>
-          <div style="background: var(--color-gray-50); padding: var(--space-sm); border-radius: var(--radius-md); margin-top: var(--space-xs);">
+          <div
+            style="background: var(--color-gray-50); padding: var(--space-sm); border-radius: var(--radius-md); margin-top: var(--space-xs);">
             <p style="margin: 0;"><strong>錯誤訊息：</strong><code>Cannot read property 'name' of undefined</code></p>
             <p style="margin: var(--space-xs) 0 0;"><strong>AI 列出可能原因（按機率）：</strong></p>
             <ol style="margin: var(--space-xs) 0 0;">
@@ -317,7 +340,8 @@
             <li><strong>驗證完回報結果</strong>：「試了第 1 項，發現資料確實是空的」</li>
           </ul>
 
-          <p style="margin-top: var(--space-sm); font-size: 0.9em; color: var(--color-text-light);"><strong>記住：</strong>除錯不是猜謎，而是科學方法 — 假設 → 驗證 → 結論。原因排序就是幫你快速找到正確的假設。</p>
+          <p style="margin-top: var(--space-sm); font-size: 0.9em; color: var(--color-text-light);">
+            <strong>記住：</strong>除錯不是猜謎，而是科學方法 — 假設 → 驗證 → 結論。原因排序就是幫你快速找到正確的假設。</p>
         </details>
       </div>
     </div>
@@ -371,7 +395,8 @@
             <li><strong>Web Dev Simplified</strong> - 前端開發教學</li>
             <li><strong>Anthropic</strong> - Claude 官方頻道，第一手資訊</li>
           </ul>
-          <p style="margin-top: var(--space-sm); font-size: 0.9em; color: var(--color-text-light);"><strong>建議：</strong>不用每個都追，選 1-2 個定期看就好，重點是實際動手做。</p>
+          <p style="margin-top: var(--space-sm); font-size: 0.9em; color: var(--color-text-light);">
+            <strong>建議：</strong>不用每個都追，選 1-2 個定期看就好，重點是實際動手做。</p>
         </div>
 
         <div class="card animate-on-scroll">
@@ -383,7 +408,8 @@
             <li><strong>Discord/Slack</strong>：加入開發者社群（如 Claude Discord）</li>
             <li><strong>Twitter/X</strong>：追蹤技術推手和工具更新</li>
           </ul>
-          <p style="margin-top: var(--space-sm); font-size: 0.9em; color: var(--color-text-light);"><strong>建議：</strong>不要只看不問，遇到問題就發文，社群裡很多人願意幫忙。</p>
+          <p style="margin-top: var(--space-sm); font-size: 0.9em; color: var(--color-text-light);">
+            <strong>建議：</strong>不要只看不問，遇到問題就發文，社群裡很多人願意幫忙。</p>
         </div>
 
         <div class="card animate-on-scroll">
@@ -395,23 +421,29 @@
             <li><strong>參加活動</strong>：Hackathon、線上挑戰（如 100 Days of Code）</li>
             <li><strong>開源貢獻</strong>：找簡單的 issue 試著修（標籤：good first issue）</li>
           </ul>
-          <p style="margin-top: var(--space-sm); font-size: 0.9em; color: var(--color-text-light);"><strong>建議：</strong>每個專案都推到 GitHub，建立作品集，也方便回頭看自己的進步。</p>
+          <p style="margin-top: var(--space-sm); font-size: 0.9em; color: var(--color-text-light);">
+            <strong>建議：</strong>每個專案都推到 GitHub，建立作品集，也方便回頭看自己的進步。</p>
         </div>
 
         <div class="card animate-on-scroll">
           <h3>🔖 實用資源</h3>
           <p>工具文件和學習平台：</p>
           <ul style="margin-top: var(--space-sm);">
-            <li><strong>Claude 文件</strong>：<a href="https://docs.anthropic.com" target="_blank">docs.anthropic.com</a> - 官方使用指南</li>
-            <li><strong>MDN Web Docs</strong>：<a href="https://developer.mozilla.org" target="_blank">developer.mozilla.org</a> - 網頁開發百科</li>
-            <li><strong>freeCodeCamp</strong>：<a href="https://www.freecodecamp.org" target="_blank">freecodecamp.org</a> - 免費程式課程</li>
+            <li><strong>Claude 文件</strong>：<a href="https://docs.anthropic.com" target="_blank">docs.anthropic.com</a> -
+              官方使用指南</li>
+            <li><strong>MDN Web Docs</strong>：<a href="https://developer.mozilla.org"
+                target="_blank">developer.mozilla.org</a> - 網頁開發百科</li>
+            <li><strong>freeCodeCamp</strong>：<a href="https://www.freecodecamp.org"
+                target="_blank">freecodecamp.org</a> - 免費程式課程</li>
             <li><strong>GitHub</strong>：搜尋「awesome-list」找各種精選資源清單</li>
           </ul>
-          <p style="margin-top: var(--space-sm); font-size: 0.9em; color: var(--color-text-light);"><strong>建議：</strong>把常用的文件加到瀏覽器書籤，隨時查閱。</p>
+          <p style="margin-top: var(--space-sm); font-size: 0.9em; color: var(--color-text-light);">
+            <strong>建議：</strong>把常用的文件加到瀏覽器書籤，隨時查閱。</p>
         </div>
       </div>
 
-      <div class="card animate-on-scroll" style="margin-top: var(--space-md); background: linear-gradient(135deg, var(--color-primary-lighter) 0%, var(--color-accent-lighter, #e0f2fe) 100%);">
+      <div class="card animate-on-scroll"
+        style="margin-top: var(--space-md); background: linear-gradient(135deg, var(--color-primary-lighter) 0%, var(--color-accent-lighter, #e0f2fe) 100%);">
         <h3>💡 學習心法</h3>
         <ul>
           <li><strong>不要貪多</strong>：一次專注學一個工具或技術，學到能做出東西再換</li>
@@ -553,7 +585,8 @@
             <div>你給的這段 [code/方案]，我 [遇到什麼問題]。</div>
             <div>能不能換一個更簡單/更符合 [需求] 的做法？</div>
           </div>
-          <p style="margin-top: var(--space-sm); font-size: 0.9em; color: var(--color-text-light);"><strong>記住：</strong>AI 不是萬能，但它可以無限次重試。不怕問題多，就怕不問。</p>
+          <p style="margin-top: var(--space-sm); font-size: 0.9em; color: var(--color-text-light);">
+            <strong>記住：</strong>AI 不是萬能，但它可以無限次重試。不怕問題多，就怕不問。</p>
         </div>
       </div>
 
@@ -602,7 +635,8 @@
             <div>我的專案現在有 [列出主要功能]。</div>
             <div>請幫我規劃一個清楚的資料夾結構，讓我知道每個檔案該放哪裡。</div>
           </div>
-          <p style="margin-top: var(--space-sm); font-size: 0.9em; color: var(--color-text-light);"><strong>記住：</strong>大專案是從小專案長出來的，一開始就保持整潔，後面就不用重構。</p>
+          <p style="margin-top: var(--space-sm); font-size: 0.9em; color: var(--color-text-light);">
+            <strong>記住：</strong>大專案是從小專案長出來的，一開始就保持整潔，後面就不用重構。</p>
         </div>
       </div>
     </div>
@@ -613,7 +647,8 @@
     <div class="container-narrow">
       <h2>小字典</h2>
 
-      <dl style="background: white; padding: var(--space-md); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm);">
+      <dl
+        style="background: white; padding: var(--space-md); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm);">
         <dt style="font-weight: 600; margin-top: var(--space-sm); color: var(--color-primary);">跑起來</dt>
         <dd style="color: var(--color-text-light); margin-bottom: var(--space-sm);">= build / test / 打開畫面看結果</dd>
 
@@ -645,7 +680,8 @@
   <section id="reveal">
     <div class="container-narrow">
       <h2>💡 順帶一提</h2>
-      <img src="./assets/svg/reveal-icon.svg" alt="Magic" style="max-width: 100px; margin: 0 auto 2rem; display: block;">
+      <img src="./assets/svg/reveal-icon.svg" alt="Magic"
+        style="max-width: 100px; margin: 0 auto 2rem; display: block;">
 
       <div class="card animate-on-scroll">
         <h3>這個教學網站本身也是用 AI 快速做出來的</h3>
@@ -669,7 +705,8 @@
             <li><strong>問對問題</strong>：不是問「幫我做」，而是問「給我計畫 → 我確認 → 執行第一步」</li>
           </ul>
 
-          <p style="margin-top: var(--space-sm); font-size: 0.9em; color: var(--color-text-light);">整個網站從零到上線大約 2 小時，但重點不是快，而是過程中每一步都可控、可驗證。</p>
+          <p style="margin-top: var(--space-sm); font-size: 0.9em; color: var(--color-text-light);">整個網站從零到上線大約 2
+            小時，但重點不是快，而是過程中每一步都可控、可驗證。</p>
         </details>
       </div>
     </div>
@@ -691,4 +728,5 @@
   <script src="./js/animations.js"></script>
   <script src="./js/app.js"></script>
 </body>
+
 </html>
